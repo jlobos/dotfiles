@@ -1,0 +1,111 @@
+################################################################################
+
+exec --no-startup-id VBoxClient-all
+
+################################################################################
+# Colors
+
+# windows
+set $c16 #000000
+set $c17 #2BD350
+set $c18 #F4F4F4
+set $c19 #ffffff
+
+set $c20 #000000
+set $c21 #000000
+set $c22 #737373
+set $c23 #ffffff
+
+set $c24 #000000
+set $c25 #000000
+set $c26 #F4F4F4
+set $c27 #ffffff
+
+set $c28 #000000
+set $c29 #000000
+set $c30 #F4F4F4
+set $c31 #ffffff
+
+client.focused            $c16 $c17 $c18 $c19
+client.focused_inactive   $c20 $c21 $c22 $c23
+client.unfocused          $c24 $c25 $c26 $c27
+client.urgent             $c28 $c29 $c30 $c31
+
+################################################################################
+# i3 config file (v4)
+set $mod Mod4
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Source Code Pro 9
+
+floating_modifier $mod
+
+bindsym $mod+Return exec terminator
+bindsym $mod+Q kill
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ntilde focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+J move left
+bindsym $mod+Shift+K move down
+bindsym $mod+Shift+L move up
+bindsym $mod+Shift+Ntilde move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+Shift+exclam move container to workspace 1
+bindsym $mod+Shift+quotedbl move container to workspace 2
+bindsym $mod+Shift+numbersign move container to workspace 3
+bindsym $mod+Shift+dollar move container to workspace 4
+bindsym $mod+Shift+percent move container to workspace 5
+bindsym $mod+Shift+ampersand move container to workspace 6
+bindsym $mod+Shift+slash move container to workspace 7
+bindsym $mod+Shift+parenleft move container to workspace 8
+bindsym $mod+Shift+parenright move container to workspace 9
+bindsym $mod+Shift+equal move container to workspace 10
+bindsym $mod+r mode "resize"
+
+bindsym $mod+Shift+C reload
+bindsym $mod+Shift+R restart
+bindsym $mod+Shift+E exit
+
+mode "resize" {
+  bindsym j resize grow width 1 px or 1 ppt
+  bindsym i resize grow height 1 px or 1 ppt
+  bindsym l resize shrink width 1 px or 1 ppt
+  bindsym k resize shrink height 1 px or 1 ppt
+  bindsym Left resize grow width 10 px or 10 ppt
+  bindsym Up resize grow height 10 px or 10 ppt
+  bindsym Right resize shrink width 10 px or 10 ppt
+  bindsym Down resize shrink height 10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# border
+new_window 1pixel
+new_float 1pixel
