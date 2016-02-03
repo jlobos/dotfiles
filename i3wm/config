@@ -7,7 +7,8 @@ exec --no-startup-id VBoxClient-all
 
 # windows
 set $c16 #000000
-set $c17 #2BD350
+# set $c17 #2BD350
+set $c17 #33e286
 set $c18 #F4F4F4
 set $c19 #ffffff
 
