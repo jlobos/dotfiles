@@ -5,23 +5,25 @@ exec --no-startup-id VBoxClient-all
 ################################################################################
 # Colors
 
-# windows
+# windows focused
 set $c16 #000000
-# set $c17 #2BD350
-set $c17 #33e286
+set $c17 #5C6370
 set $c18 #F4F4F4
-set $c19 #ffffff
+set $c19 #5C6370
 
+# windows focused_inactive
 set $c20 #000000
-set $c21 #000000
+set $c21 #1E2127
 set $c22 #737373
-set $c23 #ffffff
+set $c23 #1E2127
 
-set $c24 #000000
-set $c25 #000000
+# windows unfocused
+set $c24 #1E2127
+set $c25 #21252B
 set $c26 #F4F4F4
-set $c27 #ffffff
+set $c27 #21252B
 
+# windows urgent
 set $c28 #000000
 set $c29 #000000
 set $c30 #F4F4F4
