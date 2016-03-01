@@ -1,4 +1,5 @@
 adobe-source-code-pro-fonts
+aircrack-ng
 atom-editor-bin
 autoconf
 automake
@@ -45,9 +46,11 @@ make
 man-db
 man-pages
 mdadm
+mongodb
 nano
 netctl
 networkmanager
+nmap
 noto-fonts-emoji
 pacman
 patch
@@ -58,6 +61,7 @@ pkg-config
 procps-ng
 psmisc
 reiserfsprogs
+robomongo-bin
 s-nail
 sed
 shadow
@@ -71,6 +75,7 @@ usbutils
 util-linux
 vi
 virtualbox-guest-utils
+wget
 which
 xfsprogs
 xorg-server
