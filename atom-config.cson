@@ -1,0 +1,12 @@
+"*":
+  core:
+    autoHideMenuBar: true
+  editor:
+    fontFamily: "Source Code Pro"
+    fontSize: 12
+    invisibles: {}
+    zoomFontWhenCtrlScrolling: false
+  "exception-reporting":
+    userId: "7b436d64-7ae1-70c6-bae2-38229e069a05"
+  welcome:
+    showOnStartup: false
