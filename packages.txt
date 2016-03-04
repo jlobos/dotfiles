@@ -51,7 +51,9 @@ nano
 netctl
 networkmanager
 nmap
+nodejs
 noto-fonts-emoji
+npm
 pacman
 patch
 pciutils
@@ -61,7 +63,6 @@ pkg-config
 procps-ng
 psmisc
 reiserfsprogs
-robomongo-bin
 s-nail
 sed
 shadow
@@ -79,7 +80,5 @@ wget
 which
 xfsprogs
 xorg-server
-xorg-server-utils
-xorg-utils
 xorg-xinit
 yaourt
