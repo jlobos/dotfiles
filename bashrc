@@ -25,7 +25,12 @@ COLOR_GRAY='\e[0;30m'
 COLOR_LIGHT_GRAY='\e[0;37m'
 
 alias ls='ls --color=auto'
+alias i='npm i'
+alias s='git status'
 
 source ~/dotfiles/git-prompt.sh
 
 PS1='\w \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]\$ \[\e[0m\]'
+
+# RubyGems
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

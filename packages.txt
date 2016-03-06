@@ -24,10 +24,12 @@ gcc-libs
 gettext
 git
 glibc
+go
 grep
 groff
 grub
 gzip
+htop
 i3-wm
 i3lock
 i3status
@@ -54,6 +56,7 @@ nmap
 nodejs
 noto-fonts-emoji
 npm
+openssh
 pacman
 patch
 pciutils
@@ -63,6 +66,8 @@ pkg-config
 procps-ng
 psmisc
 reiserfsprogs
+robomongo-bin
+ruby
 s-nail
 sed
 shadow
@@ -78,6 +83,7 @@ vi
 virtualbox-guest-utils
 wget
 which
+xclip
 xfsprogs
 xorg-server
 xorg-xinit
