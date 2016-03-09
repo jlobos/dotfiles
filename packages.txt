@@ -29,6 +29,7 @@ grep
 groff
 grub
 gzip
+hashcat
 htop
 i3-wm
 i3lock
@@ -62,9 +63,11 @@ patch
 pciutils
 pcmciautils
 perl
+pixiewps
 pkg-config
 procps-ng
 psmisc
+reaver
 reiserfsprogs
 robomongo-bin
 ruby
