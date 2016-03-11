@@ -42,9 +42,11 @@ less
 libtool
 licenses
 linux
+linux-headers
 logrotate
 lvm2
 m4
+macchanger
 make
 man-db
 man-pages
@@ -80,6 +82,7 @@ systemd-sysvcompat
 tar
 terminator
 texinfo
+tree
 usbutils
 util-linux
 vi
