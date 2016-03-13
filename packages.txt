@@ -59,6 +59,7 @@ nmap
 nodejs
 noto-fonts-emoji
 npm
+nvm
 openssh
 pacman
 patch
@@ -87,6 +88,7 @@ usbutils
 util-linux
 vi
 virtualbox-guest-utils
+virtualbox-host-dkms
 wget
 which
 xclip

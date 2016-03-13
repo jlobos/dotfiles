@@ -1,11 +1,12 @@
 "*":
+  "atom-beautify":
+    _analyticsUserId: "545d03d6-2e71-42f2-9507-a0e7575525cd"
   core:
     autoHideMenuBar: true
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
     invisibles: {}
-    softWrap: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "7b436d64-7ae1-70c6-bae2-38229e069a05"
