@@ -1,3 +1,4 @@
-file-icons@1.6.17
-node-debugger@1.4.4
+atom-beautify@0.28.26
+file-icons@1.6.18
+node-debugger@1.4.6
 
