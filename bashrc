@@ -26,6 +26,7 @@ COLOR_LIGHT_GRAY='\e[0;37m'
 
 alias ls='ls --color=auto'
 alias i='npm i'
+alias r='npm r'
 alias s='git status'
 alias e='atom'
 alias c='clear'
