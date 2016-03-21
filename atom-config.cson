@@ -1,6 +1,7 @@
 "*":
   "atom-beautify":
     _analyticsUserId: "545d03d6-2e71-42f2-9507-a0e7575525cd"
+  autoprefixer: {}
   core:
     autoHideMenuBar: true
   editor:

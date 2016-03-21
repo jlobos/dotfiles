@@ -2,4 +2,5 @@ atom-beautify@0.28.26
 file-icons@1.6.18
 node-debugger@1.4.6
 pigments@0.24.5
+react@0.14.2
 
