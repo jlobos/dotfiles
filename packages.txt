@@ -10,6 +10,7 @@ bzip2
 clang
 coreutils
 cryptsetup
+crystal
 device-mapper
 dhcpcd
 diffutils
@@ -86,6 +87,7 @@ tar
 terminator
 texinfo
 tree
+unp
 usbutils
 util-linux
 vi
