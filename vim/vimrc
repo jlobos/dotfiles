@@ -1,0 +1,69 @@
+
+" Syntax highlighting
+syntax enable
+filetype plugin indent on
+
+" Theme
+" set t_Co=256
+colorscheme base16-default
+
+set autoindent
+set backspace=indent,eol,start
+set cursorline
+set encoding=utf-8
+set gdefault
+set hidden
+set history=50
+set iskeyword-=
+set mouse=a
+set number
+set ruler
+set scrolloff=3
+set showcmd
+set showmode
+set ttyfast
+set visualbell
+set wildmenu
+set wildmode=list:longest
+set viminfo="NONE"
+
+" Wrap column settings
+" set colorcolumn=75
+" set formatoptions=qrn1
+" set textwidth=79
+" set wrap
+
+" Tabbing settings
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+" Status bar
+set laststatus=2
+
+" Disale swap files
+set noswapfile
+
+" Search/Highlight tweaks
+set hlsearch
+set ignorecase
+set incsearch
+set showmatch
+set smartcase
+
+" Disable moving with arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" inoremap { {}<left>
+" inoremap [ []<left>
+" inoremap ( ()<left>
+" inoremap ' ''<left>
+" inoremap " ""<left>
