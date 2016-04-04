@@ -20,7 +20,6 @@
     font = Source Code Pro 9
     foreground_color = "#5c6370"
     icon_bell = False
-    palette = "#000000:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#00cdcd:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#ffffff"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
