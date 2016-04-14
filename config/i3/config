@@ -1,0 +1,220 @@
+
+#
+# Constants
+#
+
+set $mod Mod4
+set $font Source Code Pro 9
+set $terminal termite
+set $wall ~/.dotfiles/wall/01.jpeg
+
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  ""
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+set $black          #000000
+set $red            #e06c75
+set $green          #98c379
+set $yellow         #d19a66
+set $blue           #61afef
+set $magenta        #c678dd
+set $cyan           #56b6c2
+set $white          #abb2bf
+set $bright_black   #5c6379
+set $bright_red     $red
+set $bright_green   $green
+set $bright_yellow  $yellow
+set $bright_blue    $blue
+set $bright_magenta $magenta
+set $bright_cyan    $cyan
+set $bright_white   #ffffff
+set $foreground     #5c6370
+set $background     #282c34
+
+#
+# Windows
+#
+
+new_window pixel 1
+new_float pixel 1
+smart_borders on
+gaps inner 10
+gaps outer 0
+
+font pango: $font
+floating_modifier $mod
+
+bindsym $mod+Return exec --no-startup-id $terminal
+bindsym $mod+q kill
+bindsym $mod+d exec dmenu_run
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ntilde focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ntilde move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal, vertical orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+#
+# Mode Resize Window
+#
+
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Escape mode "default"
+}
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+bar {
+  #mode hide
+  modifier Mod1
+  status_command i3status --config ~/.dotfiles/config/i3/i3status
+  tray_padding 0
+  position top
+
+  colors {
+    statusline  $white
+    background  $background
+    separator   $background
+
+    #                  BORDER       BACKGROUND    TEXT
+    focused_workspace  $background  $background   $white
+    inactive_workspace $background  $background   $foreground
+    active_workspace   $background  $background   $white
+    urgent_workspace   $background  $background   $red
+  }
+}
+
+#
+# Colors of windows
+#
+
+#                       BORDER      BACKGROUND  TEXT   INDICATOR  CHILD_BORDER
+client.focused          $white      $background $white $yellow    $white
+client.unfocused        $background $background $white $black     $background
+client.focused_inactive $background $background $white $black     $background
+client.urgent           $background $background $red   $red       $red
+client.background       $black
+
+#
+# Audio controls
+#
+
+bindsym XF86AudioMute exec --no-startup-id "pamixer --toggle-mute && killall -USR1 i3status"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 5 --allow-boost && killall -USR1 i3status"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 5 --allow-boost && killall -USR1 i3status"
+
+#
+# Sreen controls
+#
+
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 20"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 20"
+bindsym XF86Display exec --no-startup-id "arandr"
+
+#
+# Imp Pan
+#
+
+bindsym Print exec --no-startup-id "scrot ~/$(date +%F-%T).png"
+
+#
+# Autostart
+#
+
+exec --no-startup-id nm-applet
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id feh --bg-scale $wall
+exec --no-startup-id compton
+# exec --no-startup-id conky -c ~/.dotfiles/config/conky/empty_top
+# exec --no-startup-id . ~/.dotfiles/config/lemonbar/bars/status

@@ -1,0 +1,29 @@
+general {
+  colors          = true
+  color_good      = "#98c379"
+  color_degraded  = "#d19166"
+  color_bad       = "#306c75"
+  interval        = 1
+}
+
+order += "time"
+order += "volume master"
+order += "wireless _first_"
+
+time {
+  format = "%d %b %Y  %H:%M"
+}
+
+volume master {
+  format        = "♪ %volume"
+  format_muted  = "♪ %volume"
+  device        = "default"
+  mixer         = "Master"
+  mixer_idx     = 0
+}
+
+wireless _first_ {
+  format_up   = "  %essid"
+  format_down = "  down"
+}
+

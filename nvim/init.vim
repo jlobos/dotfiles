@@ -1,1 +1,0 @@
-/home/jlobos/.dotfiles/vim/vimrc
