@@ -8,10 +8,10 @@ set $font Source Code Pro 9
 set $terminal termite
 set $wall ~/.dotfiles/wall/01.jpeg
 
-set $ws1  "1"
-set $ws2  "2"
-set $ws3  "3"
-set $ws4  ""
+set $ws1  ""
+set $ws2  ""
+set $ws3  ""
+set $ws4  "4"
 set $ws5  "5"
 set $ws6  "6"
 set $ws7  "7"
@@ -37,6 +37,7 @@ set $bright_cyan    $cyan
 set $bright_white   #ffffff
 set $foreground     #5c6370
 set $background     #282c34
+set $transparent    #00000000
 
 #
 # Windows
@@ -53,7 +54,11 @@ floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+q kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run -font '$font' \
+                -bg '$background' -fg '$white' \
+                -hlbg '$foreground' -hlfg '$white' \
+                -bc '$background' -location 2 \
+                -opacity 100 -lines 2 -columns 1
 
 # change focus
 bindsym $mod+j focus left
@@ -156,22 +161,21 @@ mode "resize" {
 # finds out, if available)
 
 bar {
-  #mode hide
-  modifier Mod1
-  status_command i3status --config ~/.dotfiles/config/i3/i3status
+  status_command i3blocks
   tray_padding 0
   position top
+  i3bar_command i3bar -t
 
   colors {
-    statusline  $white
-    background  $background
-    separator   $background
+    statusline  $transparent
+    background  $transparent
+    separator   $transparent
 
     #                  BORDER       BACKGROUND    TEXT
-    focused_workspace  $background  $background   $white
-    inactive_workspace $background  $background   $foreground
-    active_workspace   $background  $background   $white
-    urgent_workspace   $background  $background   $red
+    focused_workspace  $transparent $transparent  $white
+    inactive_workspace $transparent $transparent  $foreground
+    active_workspace   $transparent $transparent  $white
+    urgent_workspace   $transparent $transparent  $red
   }
 }
 
@@ -216,5 +220,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id feh --bg-scale $wall
 exec --no-startup-id compton
-# exec --no-startup-id conky -c ~/.dotfiles/config/conky/empty_top
-# exec --no-startup-id . ~/.dotfiles/config/lemonbar/bars/status
+
