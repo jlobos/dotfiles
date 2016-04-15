@@ -31,7 +31,8 @@ alias c='clear'
 alias vim='nvim'
 alias br='source ~/.bashrc'           # reload bashrc
 alias nyan='telnet nyancat.dakko.us'  # nyan cat
-alias spotify='spotify  --force-device-scale-factor=1.0000001'
+alias y='yaourt'
+alias p='pacman'
 
 #
 # others
