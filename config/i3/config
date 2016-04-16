@@ -8,10 +8,10 @@ set $font Source Code Pro 9
 set $terminal termite
 set $wall ~/.dotfiles/wall/01.jpeg
 
-set $ws1  ""
-set $ws2  ""
-set $ws3  ""
-set $ws4  "4"
+set $ws1  "1:"
+set $ws2  "2:"
+set $ws3  "3:"
+set $ws4  "4:"
 set $ws5  "5"
 set $ws6  "6"
 set $ws7  "7"
@@ -165,6 +165,7 @@ bar {
   tray_padding 0
   position top
   i3bar_command i3bar -t
+  strip_workspace_numbers yes
 
   colors {
     statusline  $transparent

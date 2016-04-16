@@ -9,6 +9,7 @@
 # exports
 #
 
+export TERM='xterm-256color'
 export LANG=es_CL.UTF-8
 
 #
@@ -22,9 +23,10 @@ source ~/.dotfiles/colors.sh
 # alias
 #
 
-alias ls='ls -S --color=auto'
+alias ls='ls -X --color=auto'
 alias i='npm i'
 alias r='npm r'
+alias g='git'
 alias s='git status'
 alias e='nvim'
 alias c='clear'
@@ -32,7 +34,12 @@ alias vim='nvim'
 alias br='source ~/.bashrc'           # reload bashrc
 alias nyan='telnet nyancat.dakko.us'  # nyan cat
 alias y='yaourt'
-alias p='pacman'
+alias p='sudo pacman'
+alias feh='feh --scale-down'
+
+open() { xdg-open $1 &> /dev/null & }
+ga() { git add $1; }
+gc() { git commit -m "$*"; }
 
 #
 # others
@@ -41,7 +48,7 @@ alias p='pacman'
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH" # RubyGems
 
 #
-# out
+# prompt
 #
 
 PS1='\w \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]• \[\e[1;33m\]• \[\e[1;31m\]• \[\e[0m\]'
