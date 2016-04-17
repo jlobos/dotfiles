@@ -149,3 +149,7 @@ let g:ctrlp_show_hidden = 1
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onedark'
+
+" NERDCommenter
+let NERDSpaceDelims=1
+

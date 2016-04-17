@@ -221,4 +221,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id feh --bg-scale $wall
 exec --no-startup-id compton
+exec --no-startup-id megasync
 

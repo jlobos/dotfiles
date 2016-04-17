@@ -35,7 +35,7 @@ alias br='source ~/.bashrc'           # reload bashrc
 alias nyan='telnet nyancat.dakko.us'  # nyan cat
 alias y='yaourt'
 alias p='sudo pacman'
-alias feh='feh --scale-down'
+alias f='feh --scale-down'
 
 open() { xdg-open $1 &> /dev/null & }
 ga() { git add $1; }
