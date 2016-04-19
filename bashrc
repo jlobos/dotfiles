@@ -36,6 +36,7 @@ alias nyan='telnet nyancat.dakko.us'  # nyan cat
 alias y='yaourt'
 alias p='sudo pacman'
 alias f='feh --scale-down'
+alias n='node'
 
 open() { xdg-open $1 &> /dev/null & }
 ga() { git add $1; }
