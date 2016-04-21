@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'joshdick/airline-onedark.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -155,12 +156,14 @@ let g:airline_theme='onedark'
 let NERDSpaceDelims=1
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+" let g:syntastic_error_symbol = '✗✗'
+" let g:syntastic_style_error_symbol = '✗✗'
+let g:syntastic_warning_symbol = '🔥'
+let g:syntastic_style_warning_symbol = '🔥'
 let g:syntastic_javascript_checkers = ['standard']
+nnoremap <F1> :SyntasticCheck<cr>
 
