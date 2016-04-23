@@ -7,18 +7,31 @@ call vundle#begin('~/.dotfiles/config/nvim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'joshdick/onedark.vim'
+" syntax
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mxw/vim-jsx'
+" git helpers
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+" utils
+Plugin 'benekastah/neomake'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'joshdick/onedark.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'terryma/vim-expand-region'
-Plugin 'vim-airline/vim-airline'
-Plugin 'joshdick/airline-onedark.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-scripts/vim-auto-save'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'joshdick/airline-onedark.vim'
+" nodejs
+" Plugin 'neovim/node-host'
+" Plugin 'disusered/node-neovim-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,6 +78,7 @@ set splitright      " Vertical split to right of current
 set tabstop=2       " 1 tab == 2 spaces
 set wildmenu        " Turn on the WiLd menu
 set wrap            " Wrap lines
+set clipboard+=unnamedplus " Normal copy, paste
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -138,32 +152,25 @@ command W w !sudo tee % > /dev/null
 " deoplete, asynchronous keyword completion
 let g:deoplete#enable_at_startup = 1
 
-" Gundo
-nnoremap <F5> :GundoToggle<cr>
-
 " NERDTree toggle
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 map <C-\> :NERDTreeToggle<cr>
 
 " ctrlp.vim
 let g:ctrlp_show_hidden = 1
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
-
 " NERDCommenter
 let NERDSpaceDelims=1
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-" let g:syntastic_error_symbol = '✗✗'
-" let g:syntastic_style_error_symbol = '✗✗'
-let g:syntastic_warning_symbol = '🔥'
-let g:syntastic_style_warning_symbol = '🔥'
-let g:syntastic_javascript_checkers = ['standard']
-nnoremap <F1> :SyntasticCheck<cr>
+" Neomake
+let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_jsx_enabled_makers = ['standard']
+autocmd! BufWritePost * Neomake
+
+" AutoSave
+let g:auto_save = 1
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
