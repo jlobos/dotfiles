@@ -14,6 +14,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mxw/vim-jsx'
+Plugin 'ap/vim-css-color'
 " git helpers
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -27,8 +28,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'vim-scripts/vim-auto-save'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'joshdick/airline-onedark.vim'
+Plugin 'terryma/vim-multiple-cursors'
 " nodejs
 " Plugin 'neovim/node-host'
 " Plugin 'disusered/node-neovim-plugin'
@@ -78,7 +78,8 @@ set splitright      " Vertical split to right of current
 set tabstop=2       " 1 tab == 2 spaces
 set wildmenu        " Turn on the WiLd menu
 set wrap            " Wrap lines
-set clipboard+=unnamedplus " Normal copy, paste
+set fillchars+=vert:\       " Split bar
+set clipboard+=unnamedplus  " Normal copy, paste
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -131,7 +132,7 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR><Paste>
 
 " Tab navigation like Firefox.
 nnoremap <C-t> :tabnew<cr>
-nnoremap <C-n> :tabnext<cr>
+nnoremap <C-i> :tabnext<cr>
 "nnoremap <C-w> :tabclose<cr>
 
 "
@@ -155,6 +156,8 @@ let g:deoplete#enable_at_startup = 1
 " NERDTree toggle
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
+let g:NERDTreeDirArrowExpandable = '»'
+let g:NERDTreeDirArrowCollapsible = '«'
 map <C-\> :NERDTreeToggle<cr>
 
 " ctrlp.vim
@@ -174,3 +177,22 @@ let g:auto_save = 1
 " vim-jsx
 let g:jsx_ext_required = 0
 
+" NERDTress File highlighting
+" function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ " exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ " exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+" endfunction
+
+" call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+" call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+" call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+" call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+" call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+" call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+" call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+" call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+" call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+" call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+" call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+" call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+" call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
