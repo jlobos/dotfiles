@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mxw/vim-jsx'
 Plugin 'ap/vim-css-color'
@@ -81,8 +80,6 @@ set wrap            " Wrap lines
 set fillchars+=vert:\       " Split bar
 set clipboard+=unnamedplus  " Normal copy, paste
 
-
-
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
@@ -115,18 +112,35 @@ func! GitBranch()
   if !empty(l:status)
     let l:status = substitute(l:status, '[Git(', '', '')
     let l:status = substitute(l:status, ')]', '', '')
-    return ' ' . l:status . ' '
+    return '   ' . l:status . ' '
   endif
   return ''
 endfunc
 
-set statusline =
-set statusline +=%f           " File
-set statusline +=\ %l:%v      " Current line and column
-set statusline +=%=           " End line
-set statusline +=\ %{toupper(''.(&fenc!=''?&fenc:&enc).'')} " Encoding
-set statusline +=\ %y               " File type
-set statusline +=\ %{GitBranch()}   " Git branch
+func! GitDiffNumStat()
+  let l:path = expand('%:p')
+  if !empty(l:path)
+    let l:out = system('git diff --numstat ' . expand('%:p'))
+    if !empty(l:out)
+      let l:list = map(split(l:out), 'matchstr(v:val, "[0-9]*")')
+      return ' +' . l:list[0] . ',-' . l:list[1] . ' '
+    endif
+  endif
+  return ''
+endfunc
+
+set statusline =%1*\ ❤%*
+" set statusline =
+set statusline +=\ %f       " File
+set statusline +=\ %l:%v    " Current line and column
+set statusline +=%=         " End line
+set statusline +=\ %{toupper(&fenc!=''?&fenc:&enc)}   " Encoding
+set statusline +=\ %{&ft!=''?&ft:'Plaint\ Text'}      " File type
+set statusline +=%{GitBranch()}                       " Git branch
+set statusline +=%2*%{GitDiffNumStat()}               " Git diff
+
+hi User1 guifg=#F46767 guibg=#2c323b
+hi User2 guifg=#E2C08D guibg=#2c323b
 
 "
 " Maps
@@ -169,6 +183,15 @@ autocmd BufWritePre * :%s/\s\+$//e
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+  augroup END
+
 "
 " Settings of Plugins
 "
@@ -185,6 +208,10 @@ map <C-\> :NERDTreeToggle<cr>
 
 " ctrlp.vim
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " NERDCommenter
 let NERDSpaceDelims=1
@@ -199,4 +226,3 @@ let g:auto_save = 1
 
 " vim-jsx
 let g:jsx_ext_required = 0
-
