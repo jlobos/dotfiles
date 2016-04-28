@@ -10,7 +10,7 @@
 #
 
 export TERM='xterm-256color'
-export LANG='en'
+export LANG='es_CL.UTF-8'
 export VISUAL='nvim'
 
 #
