@@ -119,7 +119,7 @@ endfunc
 
 func! GitDiffNumStat()
   let l:path = expand('%:p')
-  if !empty(l:path)
+  if !empty(l:path) && !empty(fugitive#statusline())
     let l:out = system('git diff --numstat ' . expand('%:p'))
     if !empty(l:out)
       let l:list = map(split(l:out), 'matchstr(v:val, "[0-9]*")')
