@@ -24,20 +24,21 @@ source ~/.dotfiles/colors.sh
 # alias
 #
 
-alias ls='ls -X --color=auto'
-alias i='npm i'
-alias r='npm r'
-alias g='git'
-alias s='git status'
-alias e='nvim'
-alias c='clear'
-alias vim='nvim'
 alias br='source ~/.bashrc'           # reload bashrc
-alias nyan='telnet nyancat.dakko.us'  # nyan cat
-alias y='yaourt'
-alias p='sudo pacman'
+alias c='clear'
+alias e='nvim'
 alias f='feh --scale-down'
+alias g='git'
+alias i='npm i'
+alias ls='ls -X --color=auto'
 alias n='node'
+alias nyan='telnet nyancat.dakko.us'  # nyan cat
+alias p='sudo pacman'
+alias r='npm r'
+alias s='git status'
+alias t='tree'
+alias vim='nvim'
+alias y='yaourt'
 
 open() { xdg-open $1 &> /dev/null & }
 ga() { git add $1; }
