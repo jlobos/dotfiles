@@ -26,7 +26,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'terryma/vim-expand-region'
-Plugin 'vim-scripts/vim-auto-save'
 Plugin 'terryma/vim-multiple-cursors'
 " nodejs
 " Plugin 'neovim/node-host'
@@ -148,6 +147,8 @@ hi User2 guifg=#E2C08D guibg=#2c323b
 
 " Fast saving
 nmap <leader>w :w!<cr>
+" Fast quit
+nmap <leader>q :q<cr>
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -220,9 +221,6 @@ let NERDSpaceDelims=1
 let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_jsx_enabled_makers = ['standard']
 autocmd! BufWritePost * Neomake
-
-" AutoSave
-let g:auto_save = 1
 
 " vim-jsx
 let g:jsx_ext_required = 0
