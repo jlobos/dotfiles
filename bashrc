@@ -31,6 +31,7 @@ alias f='feh --scale-down'
 alias g='git'
 alias i='npm i'
 alias ls='ls -X --color=auto'
+alias l='tree -L 1'
 alias n='node'
 alias nyan='telnet nyancat.dakko.us'  # nyan cat
 alias p='sudo pacman'
