@@ -14,6 +14,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mxw/vim-jsx'
 Plugin 'ap/vim-css-color'
+Plugin 'digitaltoad/vim-pug'
 " git helpers
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
