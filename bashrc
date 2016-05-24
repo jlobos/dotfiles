@@ -33,6 +33,8 @@ alias i='npm i'
 alias ls='ls -X --color=auto'
 alias l='tree -L 1 -Calsh'
 alias n='node'
+alias npmupgradebleeding='sudo sh ~/.dotfiles/config/npm/npm-upgrade-bleeding.sh'
+alias npmupgrade='sudo sh ~/.dotfiles/config/npm/npm-upgrade.sh'
 alias nyan='telnet nyancat.dakko.us'  # nyan cat
 alias p='sudo pacman'
 alias r='npm r'
