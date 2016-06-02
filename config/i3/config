@@ -133,7 +133,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec --no-startup-id "sh ~/.dotfiles/scripts/screen.sh && i3-msg restart"
 bindsym $mod+Shift+e exit
 
 #
@@ -220,6 +220,6 @@ bindsym Print exec --no-startup-id "scrot ~/$(date +%F-%T).png"
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id feh --bg-scale $wall
+exec --no-startup-id feh --bg-fill --no-xinerama $wall
 exec --no-startup-id compton
 
