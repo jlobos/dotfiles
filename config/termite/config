@@ -8,7 +8,6 @@ dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
 font = Source Code Pro 9
-scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
 #geometry = 640x480
@@ -32,10 +31,10 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
-#foreground = #dcdccc
-#foreground_bold = #ffffff
-#background = #3f3f3f
+cursor = #d8dee9
+foreground = #d8dee9
+foreground_bold = #d8dee9
+background = #1b2b34
 
 # 20% background transparency (requires a compositor)
 # background = rgba(63, 63, 63, 0.97)
@@ -44,22 +43,23 @@ filter_unmatched_urls = true
 #highlight = #2f2f2f
 
 # colors from color0 to color254 can be set
-#color0 = #3f3f3f
-#color1 = #705050
-#color2 = #60b48a
-#color3 = #dfaf8f
-#color4 = #506070
-#color5 = #dc8cc3
-#color6 = #8cd0d3
-#color7 = #dcdccc
-#color8 = #709080
-#color9 = #dca3a3
-#color10 = #c3bf9f
-#color11 = #f0dfaf
-#color12 = #94bff3
-#color13 = #ec93d3
-#color14 = #93e0e3
-#color15 = #ffffff
+
+color0 = #1b2b34
+color1 = #343d46
+color2 = #4f5b66
+color3 = #65737e
+color4 = #a7adba
+color5 = #c0c5ce
+color6 = #cdd3de
+color7 = #d8dee9
+color8 = #ec5f67
+color9 = #f99157
+color10 = #fac863
+color11 = #99c794
+color12 = #5fb3b3
+color13 = #6699cc
+color14 = #c594c5
+color15 = #ab7967
 
 [hints]
 #font = Monospace 12

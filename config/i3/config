@@ -19,24 +19,25 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
 
-set $black          #000000
-set $red            #e06c75
-set $green          #98c379
-set $yellow         #d19a66
-set $blue           #61afef
-set $magenta        #c678dd
-set $cyan           #56b6c2
-set $white          #abb2bf
-set $bright_black   #5c6379
-set $bright_red     $red
-set $bright_green   $green
-set $bright_yellow  $yellow
-set $bright_blue    $blue
-set $bright_magenta $magenta
-set $bright_cyan    $cyan
-set $bright_white   #ffffff
-set $foreground     #5c6370
-set $background     #282c34
+set $black          #1b2b34
+set $red            #343d46
+set $green          #4f5b66
+set $yellow         #65737e
+set $blue           #a7adba
+set $magenta        #c0c5ce
+set $cyan           #cdd3de
+set $white          #d8dee9
+set $bright_black   #ec5f67
+set $bright_red     #f99157
+set $bright_green   #fac863
+set $bright_yellow  #99c794
+set $bright_blue    #5fb3b3
+set $bright_magenta #6699cc
+set $bright_cyan    #c594c5
+set $bright_white   #ab7967
+
+set $foreground     #343d46
+set $background     #1b2b34
 set $transparent    #00000000
 
 #

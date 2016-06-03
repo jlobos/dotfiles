@@ -18,7 +18,6 @@ export VISUAL='nvim'
 #
 
 source ~/.dotfiles/config/git/git-prompt.sh
-source ~/.dotfiles/colors.sh
 
 #
 # alias

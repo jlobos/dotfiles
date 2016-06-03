@@ -8,18 +8,19 @@ call vundle#begin('~/.dotfiles/config/nvim/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " syntax
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'mxw/vim-jsx'
 Plugin 'ap/vim-css-color'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'elzr/vim-json'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mxw/vim-jsx'
+Plugin 'othree/yajs.vim'
+Plugin 'plasticboy/vim-markdown'
 " snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 " git helpers
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -34,6 +35,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'terryma/vim-multiple-cursors'
 " theme
 Plugin 'joshdick/onedark.vim'
+Plugin 'mhartington/oceanic-next'
 " nodejs
 " Plugin 'neovim/node-host'
 " Plugin 'disusered/node-neovim-plugin'
@@ -54,7 +56,23 @@ let g:mapleader = ","
 
 syntax on
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme onedark
+
+colorscheme OceanicNext
+set background=dark
+hi LineNr guifg=#657373 guibg=#1b2b34
+hi StatusLine guifg=#a7adba guibg=#1b2b34
+hi StatusLineNC guifg=#657373 guibg=#1b2b34
+hi VertSplit guifg=#1b2b34 guibg=#1b2b34
+hi GitGutterAdd guibg=#1b2b34
+hi GitGutterChange guibg=#1b2b34
+hi GitGutterDelete guibg=#1b2b34
+hi GitGutterChangeDelete guibg=#1b2b34
+hi TabLineFill guibg=#1b2b34
+hi TabLine guibg=#1b2b34
+hi TabLineSel guibg=#1b2b34
+hi Comment gui=italic
+
+" colorscheme onedark
 
 "
 " :)
@@ -96,7 +114,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " Wrap column settings
-set colorcolumn=80
+" set colorcolumn=80
 set textwidth=80
 
 "
@@ -145,8 +163,8 @@ set statusline +=\ %{&ft!=''?&ft:'Plaint\ Text'}      " File type
 set statusline +=%{GitBranch()}                       " Git branch
 set statusline +=%2*%{GitDiffNumStat()}               " Git diff
 
-hi User1 guifg=#F46767 guibg=#2c323b
-hi User2 guifg=#E2C08D guibg=#2c323b
+hi User1 guifg=#F46767 guibg=none
+hi User2 guifg=#E2C08D guibg=none
 
 "
 " Maps
