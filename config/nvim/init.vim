@@ -180,8 +180,8 @@ map j gj
 map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+" map <space> /
+" map <c-space> ?
 
 " Move a line of text using CTRL+[jk] or Comamnd+[jk] on mac
 nmap <C-j> mz:m+<cr>`z
