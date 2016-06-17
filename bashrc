@@ -23,6 +23,7 @@ source ~/.dotfiles/config/git/git-prompt.sh
 # alias
 #
 
+alias babel='./node_modules/.bin/babel-node'
 alias br='source ~/.bashrc'
 alias c='clear'
 alias e='nvim'
