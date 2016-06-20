@@ -34,7 +34,7 @@ Plugin 'Shougo/deoplete.nvim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'terryma/vim-multiple-cursors'
 " theme
-Plugin 'joshdick/onedark.vim'
+" Plugin 'joshdick/onedark.vim'
 Plugin 'mhartington/oceanic-next'
 " nodejs
 " Plugin 'neovim/node-host'
@@ -197,6 +197,16 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR><Paste>
 " Tab navigation like Firefox.
 nnoremap <C-t> :tabnew<cr>
 nnoremap <C-i> :tabnext<cr>
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 
 "
 " Other
