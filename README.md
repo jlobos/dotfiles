@@ -6,14 +6,14 @@ $ git clone https://github.com/jlobos/dotfiles.git
 $ mv dotfiles .dotfiles
 ```
 
-### Base16 Shell
+#### Base16 Shell
 
 ```
 $ cd ~/.dotfiles/
 $ git clone https://github.com/chriskempson/base16-shell.git config/base16-shell
 ```
 
-## arch (master)
+## arch
 
 ```bash
 ln -s ~/.dotfiles/bashrc ~/.bashrc
