@@ -59,18 +59,19 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 colorscheme OceanicNext
 set background=dark
-hi LineNr guifg=#657373 guibg=#1b2b34
-hi StatusLine guifg=#a7adba guibg=#1b2b34
-hi StatusLineNC guifg=#657373 guibg=#1b2b34
-hi VertSplit guifg=#1b2b34 guibg=#1b2b34
+hi Comment gui=italic
+hi LineNr guifg=#65737e guibg=#1b2b34 ctermfg=8 ctermbg=0
+hi StatusLine guifg=#65737e guibg=#1b2b34 ctermfg=8 ctermbg=0
+hi StatusLineNC guifg=#65737e guibg=#1b2b34 ctermfg=8
+hi TabLineFill guibg=#1b2b34 ctermbg=0
+hi TabLine guibg=#1b2b34 ctermbg=0
+hi TabLineSel guibg=#1b2b34 ctermbg=0
+hi VertSplit guifg=#1b2b34 guibg=#1b2b34 ctermfg=0 ctermbg=0
+
 hi GitGutterAdd guibg=#1b2b34
 hi GitGutterChange guibg=#1b2b34
 hi GitGutterDelete guibg=#1b2b34
 hi GitGutterChangeDelete guibg=#1b2b34
-hi TabLineFill guibg=#1b2b34
-hi TabLine guibg=#1b2b34
-hi TabLineSel guibg=#1b2b34
-hi Comment gui=italic
 
 " colorscheme onedark
 
