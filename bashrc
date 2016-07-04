@@ -18,6 +18,7 @@ export VISUAL='nvim'
 #
 
 source ~/.dotfiles/config/git/git-prompt.sh
+source ~/.dotfiles/config/base16-shell/scripts/base16-oceanicnext.sh
 
 #
 # alias
