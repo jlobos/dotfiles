@@ -241,6 +241,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable = '»'
 let g:NERDTreeDirArrowCollapsible = '«'
+map <C-\> :NERDTreeToggle<cr>
 map <leader>t :NERDTreeToggle<cr>
 
 " ctrlp.vim
