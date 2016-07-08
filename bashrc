@@ -9,8 +9,9 @@
 # exports
 #
 
-export TERM='xterm-256color'
+export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export LANG='es_CL.UTF-8'
+export TERM='xterm-256color'
 export VISUAL='nvim'
 
 #
@@ -24,6 +25,7 @@ source ~/.dotfiles/config/base16-shell/scripts/base16-oceanicnext.sh
 # alias
 #
 
+alias android='sh ~/Android/Sdk/tools/android'
 alias babel='./node_modules/.bin/babel-node'
 alias br='source ~/.bashrc'
 alias c='clear'
