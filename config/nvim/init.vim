@@ -79,31 +79,38 @@ hi GitGutterChangeDelete guibg=#1b2b34
 " :)
 "
 
-set autoindent      " Always set auto indenting on
-set autoread        " Set to auto read when a file is changed from the outside
-set cmdheight=1     " Height of the command bar
-set cursorline      " Highlight current line
-set encoding=utf-8  " Set utf8
-set expandtab       " Tabs are converted to spaces
-set laststatus=2    " Status bar
-set lazyredraw      " Don't redraw while executing macros (good performance config)
-set mouse=a         " Using the mouse
-set number          " Line numbers
-set numberwidth=3   " Width of line numbers
-set ruler           " Show the cursor line and column number
-set shiftwidth=2    " 1 tab == 2 spaces
-set showcmd         " Show comand in bar
-set smartindent     " Smart indent
-set smarttab        " Be smart when using tabs ;)
-set so=7            " Set 7 lines to the cursor - when moving vertically using j/k
-set softtabstop=2
-set splitbelow      " Horizontal split below current
-set splitright      " Vertical split to right of current
-set tabstop=2       " 1 tab == 2 spaces
-set wildmenu        " Turn on the WiLd menu
-set wrap            " Wrap lines
-set fillchars+=vert:\       " Split bar
+set autoindent              " Always set auto indenting on
+set autoread                " Set to auto read when a file is changed from the outside
 set clipboard+=unnamedplus  " Normal copy, paste
+set cmdheight=1             " Height of the command bar
+set cursorline              " Highlight current line
+set encoding=utf-8          " Set utf8
+set expandtab               " Tabs are converted to spaces
+set fillchars+=vert:\       " Split bar
+set laststatus=2            " Status bar
+set lazyredraw              " Don't redraw while executing macros (good performance config)
+set mouse=a                 " Using the mouse
+" set noexpandtab
+set number                  " Line numbers
+set numberwidth=3           " Width of line numbers
+set ruler                   " Show the cursor line and column number
+set shiftwidth=2            " 1 tab == 2 spaces
+set showcmd                 " Show comand in bar
+set smartindent             " Smart indent
+set smarttab                " Be smart when using tabs ;)
+set so=7                    " Set 7 lines to the cursor - when moving vertically using j/k
+set softtabstop=2
+set splitbelow              " Horizontal split below current
+set splitright              " Vertical split to right of current
+set tabstop=2               " 1 tab == 2 spaces
+set wildmenu                " Turn on the WiLd menu
+set wrap                    " Wrap lines
+
+" Folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
