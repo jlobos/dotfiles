@@ -49,7 +49,7 @@ alias s='git status'
 alias t='tree'
 alias vim='nvim'
 alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu mamitatequieromucho'
-alias y='yaourt --noconfirm'
+alias y='yaourt --noconfirm -Syua'
 
 open() { xdg-open $1 &> /dev/null & }
 ga() { git add $1; }
