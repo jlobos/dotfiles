@@ -2,8 +2,18 @@
 # ~/.bashrc
 #
 
+OS=$(lsb_release -si)
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+  xterm-color) color_prompt=yes;;
+esac
 
 #
 # exports
@@ -31,11 +41,15 @@ alias babelwatch='./node_modules/.bin/babel --watch'
 alias br='source ~/.bashrc'
 alias c='clear'
 alias copy='xclip -selection clipboard'
+alias d='pwd'
 alias e='nvim'
 alias f='feh --scale-down'
 alias g='git'
+alias gl='git lg'
 alias h='heroku'
 alias i='npm i'
+alias la='ls -A'
+alias ll='ls -alF'
 alias ls='ls -X --color=auto'
 alias l='tree -L 1 -Calsh'
 alias n='node'
@@ -43,13 +57,21 @@ alias npmupgrade='sudo sh ~/.dotfiles/config/npm/npm-upgrade.sh'
 alias nyan='telnet nyancat.dakko.us'
 alias o='rhc'
 alias p='sudo pacman'
+alias q='exit'
 alias r='npm r'
 alias run='npm run -loglevel silent'
 alias s='git status'
 alias t='tree'
 alias vim='nvim'
 alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu mamitatequieromucho'
-alias y='yaourt --noconfirm -Syua'
+
+if [ $OS == "Ubuntu" ]; then
+  alias u='sudo apt-get update && sudo apt-get upgrade'
+  alias add='sudo apt-get install'
+elif [ $OS == 'Arch']; then
+  alias u='yaourt --noconfirm -Syua'
+  alias add='yaourt -S'
+fi
 
 open() { xdg-open $1 &> /dev/null & }
 ga() { git add $1; }
@@ -74,9 +96,16 @@ decrypt() {
 
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH" # RubyGems
 
+HISTCONTROL=ignoreboth
+shopt -s histappend
+shopt -s checkwinsize
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 #
 # prompt
 #
 
-PS1='\w \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]• \[\e[1;33m\]• \[\e[1;31m\]• \[\e[0m\]'
-
+PS1='\[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]• \[\e[1;33m\]• \[\e[1;31m\]• \[\e[0m\]'
