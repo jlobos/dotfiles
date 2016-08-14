@@ -2,8 +2,6 @@
 # ~/.bashrc
 #
 
-OS=$(lsb_release -si)
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
