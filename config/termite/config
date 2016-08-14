@@ -1,76 +1,39 @@
 [options]
-scroll_on_output = false
-scroll_on_keystroke = true
-scrollback_lines = 99999
-audible_bell = false
-mouse_autohide = false
 allow_bold = true
-dynamic_title = true
-urgent_on_bell = true
+audible_bell = false
 clickable_url = true
-font = Source Code Pro 9
-search_wrap = true
-#icon_name = terminal
-#geometry = 640x480
-
-# "system", "on" or "off"
 cursor_blink = system
-
-# "block", "underline" or "ibeam"
 cursor_shape = underline
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
-
-# set size hints for the window
-#size_hints = false
-
-# Hide links that are no longer valid in url select overlay mode
+dynamic_title = true
 filter_unmatched_urls = true
-
-# emit escape sequences for extra modified keys
-#modify_other_keys = false
+font = Fira Mono 9
+mouse_autohide = false
+scrollback_lines = 99999
+scroll_on_keystroke = true
+scroll_on_output = false
+search_wrap = true
+urgent_on_bell = true
 
 [colors]
 cursor = #d8dee9
 foreground = #d8dee9
 foreground_bold = #d8dee9
-background = #1b2b34
-
-# 20% background transparency (requires a compositor)
-# background = rgba(63, 63, 63, 0.97)
-
-# if unset, will reverse foreground and background
+background = rgba(0, 0, 0, 0.5)
 #highlight = #2f2f2f
 
-# colors from color0 to color254 can be set
-
-color0 = #1b2b34
-color1 = #343d46
-color2 = #4f5b66
-color3 = #65737e
-color4 = #a7adba
-color5 = #c0c5ce
-color6 = #cdd3de
-color7 = #d8dee9
-color8 = #ec5f67
-color9 = #f99157
-color10 = #fac863
-color11 = #99c794
-color12 = #5fb3b3
-color13 = #6699cc
-color14 = #c594c5
-color15 = #ab7967
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
-
-# vim: ft=dosini cms=#%s
+#color0 = #1b2b34
+#color1 = #343d46
+#color2 = #4f5b66
+#color3 = #65737e
+#color4 = #a7adba
+#color5 = #c0c5ce
+#color6 = #cdd3de
+#color7 = #d8dee9
+#color8 = #ec5f67
+#color9 = #f99157
+#color10 = #fac863
+#color11 = #99c794
+#color12 = #5fb3b3
+#color13 = #6699cc
+#color14 = #c594c5
+#color15 = #ab7967

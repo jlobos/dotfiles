@@ -6,7 +6,7 @@
 set $mod Mod4
 set $font Source Code Pro 9
 set $terminal termite
-set $wall ~/.dotfiles/wall/02.jpg
+set $wall ~/.dotfiles/wall/05.jpg
 
 set $ws1  "1:"
 set $ws2  "2:"
