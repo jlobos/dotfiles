@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+OS=$(lsb_release -si)
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -90,11 +92,17 @@ decrypt() {
 
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH" # RubyGems
 
+HISTCONTROL=ignoreboth
+shopt -s histappend
+shopt -s checkwinsize
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 #
 # prompt
 #
 
-
 # PS1=' \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]◉ \[\e[1;33m\]◉ \[\e[1;31m\]◉ \[\e[0m\]'
 PS1=' \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]➡ \[\e[0m\]'
-
