@@ -57,7 +57,7 @@ alias t='tree'
 alias vim='nvim'
 alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu mamitatequieromucho'
 
-if [ "$OS" == 'NAME="Ubuntu 14.04.5 LTS"' ]; then
+if [ "$OS" == 'Ubuntu 14.04.5 LTS' ]; then
   alias u='sudo apt-get update && sudo apt-get upgrade'
   alias add='sudo apt-get install'
   alias remove='sudo apt-get remove'
