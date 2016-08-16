@@ -98,11 +98,11 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR><Paste>
 syntax on
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-let g:one_allow_italics=1
 " colorscheme onedark
 " colorscheme one
 colorscheme OceanicNext
 
+hi Comment gui=italic cterm=italic
 hi Normal guibg=none ctermbg=none
 hi LineNr guifg=none guibg=none ctermfg=8 ctermbg=0
 hi StatusLine guifg=none guibg=none ctermfg=8 ctermbg=0
@@ -115,6 +115,7 @@ hi GitGutterAdd guibg=none ctermbg=none
 hi GitGutterChange guibg=none ctermbg=none
 hi GitGutterDelete guibg=none ctermbg=none
 hi GitGutterChangeDelete guibg=none ctermbg=none
+
 
 "
 " :)
@@ -129,7 +130,7 @@ set cmdheight=1
 " set cursorline
 set encoding=utf-8
 set expandtab
-set fillchars+=vert:\
+set fillchars+=vert:\ 
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
