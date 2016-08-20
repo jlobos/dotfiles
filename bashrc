@@ -28,7 +28,6 @@ export HISTSIZE=
 export HISTFILESIZE=
 export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export LANG='es_CL.UTF-8'
-export TERM='xterm-256color'
 export VISUAL='nvim'
 export EDITOR='nvim'
 
@@ -75,7 +74,7 @@ alias q='exit'
 alias r='npm r'
 alias run='npm run -loglevel silent'
 alias s='git status'
-alias t='tree'
+alias t='tmux -2'
 alias vim='nvim'
 alias vi='nvim'
 alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu mamitatequieromucho'
