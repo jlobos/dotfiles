@@ -61,6 +61,7 @@ let mapleader=','
 let g:mapleader=','
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
+nmap <leader>r :edit<cr>
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -115,6 +116,7 @@ hi GitGutterAdd guibg=none ctermbg=none
 hi GitGutterChange guibg=none ctermbg=none
 hi GitGutterDelete guibg=none ctermbg=none
 hi GitGutterChangeDelete guibg=none ctermbg=none
+hi NeomakeErrorSign guibg=none ctermbg=none
 
 
 "
@@ -130,7 +132,7 @@ set cmdheight=1
 " set cursorline
 set encoding=utf-8
 set expandtab
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
