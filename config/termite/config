@@ -18,7 +18,7 @@ urgent_on_bell = true
 cursor = #d8dee9
 foreground = #d8dee9
 foreground_bold = #d8dee9
-background = rgba(0, 0, 0, 0.5)
+#background = rgba(0, 0, 0, 0.6)
 #highlight = #2f2f2f
 
 #color0 = #1b2b34
