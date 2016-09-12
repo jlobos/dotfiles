@@ -27,9 +27,12 @@ let g:vim_markdown_folding_disabled = 1
 Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
-" Utils
-Plug 'Shougo/deoplete.nvim'
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+
+" Utils
 Plug 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
@@ -38,6 +41,8 @@ let g:NERDTreeDirArrowCollapsible = '«'
 map <C-n> :NERDTreeToggle<cr>
 
 " Lint
+" Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+" let g:flow#autoclose = 1
 Plug 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_jsx_enabled_makers = ['standard']
@@ -46,6 +51,7 @@ autocmd! BufWritePost * Neomake
 " Edit
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'justinmk/vim-sneak'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
