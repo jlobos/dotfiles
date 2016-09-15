@@ -14,6 +14,7 @@ OS=$(lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || 
 
 shopt -s histappend
 shopt -s checkwinsize
+xset r rate 250 60
 
 [ -x /usr/bin/lesspipe     ] && eval "$(SHELL=/bin/sh lesspipe)"
 [ -f /etc/bash_completion  ] && . /etc/bash_completion
