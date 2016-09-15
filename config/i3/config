@@ -4,14 +4,14 @@
 #
 
 set $mod Mod4
-set $font Source Code Pro 9
-set $terminal termite
-set $wall ~/.dotfiles/wall/05.jpg
+set $font SFNS Display Bold 12
+set $terminal gnome-terminal
+set $wall ~/.dotfiles/wallpaper.jpg
 
-set $ws1  "1:"
-set $ws2  "2:"
-set $ws3  "3:"
-set $ws4  "4:"
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
 set $ws5  "5"
 set $ws6  "6"
 set $ws7  "7"
@@ -55,47 +55,45 @@ floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+q kill
-bindsym $mod+d exec --no-startup-id rofi -show run -font '$font' \
-                -bg '$background' -fg '$white' \
-                -hlbg '$foreground' -hlfg '$white' \
-                -bc '$background' -location 2 \
-                -opacity 100 -lines 2 -columns 1
+bindsym $mod+d exec --no-startup-id rofi -show run \
+  -show run -font '$font' -opacity 90 -lines 1 -width 30 \
+  -bw 5 -padding 1 -line-margin 1 -separator-style none
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ntilde focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
 bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left focus left
 bindsym $mod+Right focus right
+bindsym $mod+Up focus up
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
 
 # split in horizontal, vertical orientation
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $mod+n split h
+bindsym $mod+m split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
+bindsym $mod+e layout toggle split
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -104,10 +102,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -134,8 +132,11 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r exec --no-startup-id sh ~/.dotfiles/scripts/screen.sh && feh --bg-fill --no-xinerama $wall && i3-msg restart
 bindsym $mod+Shift+e exit
+bindsym $mod+Shift+r exec \
+  --no-startup-id sh ~/.dotfiles/scripts/screen.sh \
+  && feh --bg-fill --no-xinerama $wall \
+  && i3-msg restart
 
 #
 # Mode Resize Window
@@ -158,15 +159,20 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#
+# Status Bar
+#
 
 bar {
-  status_command i3blocks
-  tray_padding 0
+  output LVDS1
   position top
   i3bar_command i3bar -t
+  status_command i3blocks
   strip_workspace_numbers yes
+  tray_output primary
+  tray_padding 0
+  mode hide
+  height 50
 
   colors {
     statusline  $transparent
@@ -196,9 +202,12 @@ client.background       $black
 # Audio controls
 #
 
-bindsym XF86AudioMute exec --no-startup-id "pamixer --toggle-mute && killall -USR1 i3status"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 5 --allow-boost && killall -USR1 i3status"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 5 --allow-boost && killall -USR1 i3status"
+bindsym XF86AudioMute exec --no-startup-id \
+  "pamixer --toggle-mute && killall -USR1 i3status"
+bindsym XF86AudioRaiseVolume exec --no-startup-id \
+  "pamixer --increase 5 --allow-boost && killall -USR1 i3status"
+bindsym XF86AudioLowerVolume exec --no-startup-id \
+  "pamixer --decrease 5 --allow-boost && killall -USR1 i3status"
 
 #
 # Sreen controls
@@ -222,4 +231,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id feh --bg-fill --no-xinerama $wall
 exec --no-startup-id compton
-
+exec --no-startup-id slack -uf
+exec --no-startup-id geary --hidden
