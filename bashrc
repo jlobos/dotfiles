@@ -33,6 +33,13 @@ export VISUAL='nvim'
 export EDITOR='nvim'
 
 #
+# This loads nvm
+#
+
+export NVM_DIR="/home/jlobos/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+#
 # Source
 #
 
@@ -70,6 +77,7 @@ alias l='tree -L 1 -Calsh'
 alias n='node'
 alias npmupdate='sudo npm-check -u -g'
 alias nyan='telnet nyancat.dakko.us'
+alias onion='systemctl start tor && firefox --private-window'
 alias o='rhc'
 alias p='sudo pacman'
 alias q='exit'
@@ -119,6 +127,4 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH" # RubyGems
 # Prompt
 #
 
-# PS1=' \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]◉ \[\e[1;33m\]◉ \[\e[1;31m\]◉ \[\e[0m\]'
-# PS1=' \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[1;32m\]➡ \[\e[0m\]'
 PS1=' \[\e[1;35m\]$(__git_ps1 "(%s)") \[\e[35m\]◯ \[\e[0m\]'
