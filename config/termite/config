@@ -15,25 +15,7 @@ search_wrap = true
 urgent_on_bell = true
 
 [colors]
-cursor = #d8dee9
-foreground = #d8dee9
-foreground_bold = #d8dee9
-#background = rgba(0, 0, 0, 0.6)
-#highlight = #2f2f2f
-
-#color0 = #1b2b34
-#color1 = #343d46
-#color2 = #4f5b66
-#color3 = #65737e
-#color4 = #a7adba
-#color5 = #c0c5ce
-#color6 = #cdd3de
-#color7 = #d8dee9
-#color8 = #ec5f67
-#color9 = #f99157
-#color10 = #fac863
-#color11 = #99c794
-#color12 = #5fb3b3
-#color13 = #6699cc
-#color14 = #c594c5
-#color15 = #ab7967
+# foreground = #d8dee9
+# foreground_bold = #d8dee9
+# background = rgba(0, 0, 0, 0.6)
+# highlight = #2f2f2f
