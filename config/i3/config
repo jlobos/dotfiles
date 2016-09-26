@@ -4,8 +4,8 @@
 #
 
 set $mod Mod4
-set $font SFNS Display Bold 12
-set $terminal gnome-terminal
+set $font SFNS Display Bold 9
+set $terminal termite
 set $wall ~/.dotfiles/wallpaper.jpg
 
 set $ws1  "1"
@@ -133,10 +133,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
-bindsym $mod+Shift+r exec \
-  --no-startup-id sh ~/.dotfiles/scripts/screen.sh \
-  && feh --bg-fill --no-xinerama $wall \
-  && i3-msg restart
+bindsym $mod+Shift+r restart
 
 #
 # Mode Resize Window
@@ -171,8 +168,6 @@ bar {
   strip_workspace_numbers yes
   tray_output primary
   tray_padding 0
-  mode hide
-  height 50
 
   colors {
     statusline  $transparent
@@ -227,9 +222,11 @@ bindsym Print exec --no-startup-id "scrot ~/$(date +%F-%T).png"
 # Autostart
 #
 
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id feh --bg-fill --no-xinerama $wall
 exec --no-startup-id compton
+exec --no-startup-id nylas -b
 exec --no-startup-id slack -uf
-exec --no-startup-id geary --hidden
+
+exec_always --no-startup-id feh --bg-fill --no-xinerama $wall
+exec_always --no-startup-id ~/.dotfiles/scripts/screen.sh
