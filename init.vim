@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Syntax
 Plug 'ap/vim-css-color'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'
 Plug 'gavocanov/vim-js-indent'
@@ -23,6 +24,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/yajs.vim'
+Plug 'posva/vim-vue'
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 Plug 'mxw/vim-jsx'
