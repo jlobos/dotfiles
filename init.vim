@@ -126,6 +126,7 @@ hi GitGutterChange guibg=none ctermbg=none
 hi GitGutterDelete guibg=none ctermbg=none
 hi GitGutterChangeDelete guibg=none ctermbg=none
 hi NeomakeErrorSign guibg=none ctermbg=none
+hi NeomakeWarningSign guibg=none ctermbg=none
 
 
 "
