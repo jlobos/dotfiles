@@ -88,6 +88,10 @@ alias t='tmux -2'
 alias vim='nvim'
 alias vi='nvim'
 alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu mamitatequieromucho'
+alias y='yarn'
+alias ya='yarn add'
+alias yd='yarn add --dev'
+alias yr='yarn remove'
 
 # package manager
 if [ "$OS" == 'Ubuntu 14.04.5 LTS' ]; then
