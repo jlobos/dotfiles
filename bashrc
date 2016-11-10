@@ -61,6 +61,7 @@ alias babelwatch='./node_modules/.bin/babel --watch'
 alias br='source ~/.bashrc'
 alias c='clear'
 alias copy='xclip -selection clipboard'
+alias date='date "+%a %d %b %Y %H:%M"'
 alias d='pwd'
 alias e='nvim'
 alias f='feh --scale-down'
@@ -88,6 +89,7 @@ alias s='git status'
 alias t='tmux -2'
 alias vim='nvim'
 alias vi='nvim'
+alias vol='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev '
 alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu meportobienmamita'
 alias ya='yarn add'
 alias yd='yarn add --dev'
@@ -95,15 +97,18 @@ alias yr='yarn remove'
 alias yu='yarn upgrade'
 alias y='yarn'
 
-# package manager
+#
+# Package Manager
+#
+
 if [ "$OS" == 'Ubuntu 14.04.5 LTS' ]; then
-  alias u='sudo apt-get update && sudo apt-get upgrade'
-  alias add='sudo apt-get install'
-  alias remove='sudo apt-get remove'
+  alias os-update='sudo apt-get update && sudo apt-get upgrade'
+  alias os-install='sudo apt-get install'
+  alias os-remove='sudo apt-get remove'
 elif [ "$OS" == 'NAME="Arch Linux"' ]; then
-  alias u='yaourt --noconfirm -Syua'
-  alias add='yaourt -S'
-  alias remove='yaourt -R'
+  alias os-update='yaourt --noconfirm -Syua'
+  alias os-install='yaourt -S'
+  alias os-remove='yaourt -R'
 fi
 
 open() { xdg-open $1 &> /dev/null & }
