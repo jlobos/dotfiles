@@ -174,7 +174,7 @@ set tabstop=2
 set textwidth=80
 set whichwrap+=<,>,h,l
 set wildmenu
-set wrap
+set nowrap
 
 "
 " Format the status line
