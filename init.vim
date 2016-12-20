@@ -73,8 +73,8 @@ nmap <leader>q :q<cr>
 nmap <leader>r :edit<cr>
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+" map j gj
+" map k gk
 
 " Move a line of text using CTRL+[jk] or Comamnd+[jk] on mac
 nmap <C-j> mz:m+<cr>`z
@@ -166,7 +166,7 @@ set showmatch
 set smartcase
 set smartindent
 set smarttab
-set so=10
+" set so=10
 set softtabstop=2
 set splitbelow
 set splitright
