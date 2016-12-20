@@ -124,8 +124,9 @@ alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu meportobienmamita'
 # git
 
 alias g='git'
-alias gl='git lg'
 alias s='git status'
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias ga='git shortlog -s -n -e'
 
 # nvim
 
