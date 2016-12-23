@@ -1,10 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/jlobos/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME='default'
+export ZSH=$HOME/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -13,6 +8,18 @@ ZSH_THEME='default'
 plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+#
+# Prompt
+#
+
+local ret_status="%(?:%{$fg_bold[magenta]%} ◯ :%{$fg_bold[red]%} ◯ )"
+PROMPT='${ret_status} %{$reset_color%}$(git_prompt_info)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%F{242}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{242} *"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 #
 # Environment variables
@@ -27,11 +34,6 @@ export VISUAL='nvim'
 # Aliases
 #
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
 alias android='sh ~/Android/Sdk/tools/android'
 alias tr='source ~/.zshrc'
 alias c='clear'
@@ -47,21 +49,25 @@ alias lol='lolcat -a'
 alias ls='ls -X --color=auto'
 alias l='tree -L 1 -Calsh'
 alias nyan='telnet nyancat.dakko.us'
+alias onion-start='systemctl start tor && firefox --private-window'
 alias onion-stop='systemctl stop tor'
-alias onion='systemctl start tor && firefox --private-window'
 alias o='rhc'
 alias p='sudo pacman'
 alias q='exit'
 alias t='tmux -2'
-alias vol='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev '
-alias wifi='sudo create_ap wlp1s0 enp0s20u1 jlobitu meportobienmamita'
+alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev '
 
 # git
 
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gl='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
+alias gp='git push'
+alias gr='git remote'
+alias gs='git status'
+alias gauthors='git shortlog -s -n -e'
 alias g='git'
-alias s='git status'
-alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias ga='git shortlog -s -n -e'
 
 # nvim
 
@@ -88,6 +94,7 @@ alias run='npm run -loglevel silent'
 alias ya='yarn add'
 alias yd='yarn add --dev'
 alias yr='yarn remove'
+alias ys='yarn start'
 alias yt='yarn test'
 alias yu='yarn upgrade-interactive'
 alias y='yarn'
