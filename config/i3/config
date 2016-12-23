@@ -19,25 +19,25 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
 
-set $black          #1b2b34
-set $red            #343d46
-set $green          #4f5b66
-set $yellow         #65737e
-set $blue           #a7adba
-set $magenta        #c0c5ce
-set $cyan           #cdd3de
-set $white          #d8dee9
-set $bright_black   #ec5f67
-set $bright_red     #f99157
-set $bright_green   #fac863
-set $bright_yellow  #99c794
-set $bright_blue    #5fb3b3
-set $bright_magenta #6699cc
-set $bright_cyan    #c594c5
-set $bright_white   #ab7967
+set $black          #282a36
+set $red            #ff5c57
+set $green          #5af78e
+set $yellow         #f3f99d
+set $blue           #57c7ff
+set $magenta        #ff6ac1
+set $cyan           #9aedfe
+set $white          #f1f1f0
+set $bright_black   #686868
+set $bright_red     #ff5c57
+set $bright_green   #5af78e
+set $bright_yellow  #f3f99d
+set $bright_blue    #57c7ff
+set $bright_magenta #ff6ac1
+set $bright_cyan    #9aedfe
+set $bright_white   #eff0eb
 
-set $foreground     #343d46
-set $background     #1b2b34
+set $foreground     #eff0eb
+set $background     #282a36
 set $transparent    #00000000
 
 #
@@ -55,9 +55,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+q kill
-bindsym $mod+d exec --no-startup-id rofi -show run \
-  -show run -font '$font' -opacity 90 -lines 1 -width 30 \
-  -bw 5 -padding 1 -line-margin 1 -separator-style none
+bindsym $mod+d exec rofi -show run -fullscreen -font '$font' -separator-style none
 
 # change focus
 bindsym $mod+h focus left
@@ -175,10 +173,10 @@ bar {
     separator   $transparent
 
     #                  BORDER       BACKGROUND    TEXT
-    focused_workspace  #ffffff $transparent  #ffffff
-    inactive_workspace $transparent $transparent  #ffffff
-    active_workspace   #ffffff $transparent  #ffffff
-    urgent_workspace   $transparent $transparent  $red
+    focused_workspace  $white       $transparent  $white
+    inactive_workspace $transparent $transparent  $white
+    active_workspace   $white       $transparent  $white
+    urgent_workspace   $red         $transparent  $red
   }
 }
 
