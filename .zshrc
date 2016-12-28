@@ -29,6 +29,7 @@ export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export EDITOR='nvim'
 export LANG='es_CL.UTF-8'
 export VISUAL='nvim'
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 #
 # Aliases
@@ -111,5 +112,3 @@ alias os-remove='yaourt -R'
 #
 
 xset r rate 250 60
-# RubyGems
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
