@@ -40,7 +40,7 @@ alias tr='source ~/.zshrc'
 alias c='clear'
 alias copy='xclip -selection clipboard'
 alias date='date "+%a %d %b %Y %H:%M"'
-alias d='pwd'
+alias p='pwd'
 alias f='feh --scale-down'
 alias hc='history -c'
 alias h='heroku'
@@ -53,7 +53,6 @@ alias nyan='telnet nyancat.dakko.us'
 alias onion-start='systemctl start tor && firefox --private-window'
 alias onion-stop='systemctl stop tor'
 alias o='rhc'
-alias p='sudo pacman'
 alias q='exit'
 alias t='tmux -2'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev '
@@ -94,6 +93,7 @@ alias run='npm run -loglevel silent'
 # yarn
 
 alias ya='yarn add'
+alias yc='yarn run clean'
 alias yd='yarn add --dev'
 alias yr='yarn remove'
 alias ys='yarn start'
@@ -106,6 +106,12 @@ alias y='yarn'
 alias os-update='yaourt --noconfirm -Syua'
 alias os-install='yaourt -S'
 alias os-remove='yaourt -R'
+
+# Docker
+
+alias d='docker'
+alias dstart='sudo systemctl start docker'
+alias dstop='sudo systemctl stop docker'
 
 #
 # Others
