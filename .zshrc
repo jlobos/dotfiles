@@ -93,6 +93,7 @@ alias run='npm run -loglevel silent'
 # yarn
 
 alias ya='yarn add'
+alias yb='yarn run build'
 alias yc='yarn run clean'
 alias yd='yarn add --dev'
 alias yr='yarn remove'
