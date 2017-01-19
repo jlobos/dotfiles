@@ -119,3 +119,7 @@ alias dstop='sudo systemctl stop docker'
 #
 
 xset r rate 250 60
+
+# This loads nvm
+export NVM_DIR="/home/jlobos/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
