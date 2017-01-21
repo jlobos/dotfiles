@@ -59,15 +59,8 @@ alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 
 
 # git
 
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gd='git diff'
-alias gl='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
-alias gp='git push'
-alias gr='git remote'
 alias gs='git status'
-alias gauthors='git shortlog -s -n -e'
+alias gl='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
 alias g='git'
 
 # nvim
