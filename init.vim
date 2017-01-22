@@ -13,8 +13,11 @@ Plug 'tomtom/tlib_vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
+let g:gitgutter_map_keys = 0
 
 " Syntax
+Plug 'pangloss/vim-javascript'
+Plug 'othree/es.next.syntax.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'digitaltoad/vim-pug'
@@ -23,7 +26,6 @@ Plug 'gavocanov/vim-js-indent'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'othree/yajs.vim'
 Plug 'posva/vim-vue'
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
@@ -37,15 +39,12 @@ Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 
 " Utils
 Plug 'scrooloose/nerdtree'
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
-let g:NERDTreeDirArrowExpandable = '»'
-let g:NERDTreeDirArrowCollapsible = '«'
-map <C-n> :NERDTreeToggle<cr>
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = '<'
 
 " Lint
-" Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
-" let g:flow#autoclose = 1
 Plug 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['standard']
 let g:neomake_jsx_enabled_makers = ['standard']
@@ -56,9 +55,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter'
-let NERDSpaceDelims=1
 
 call plug#end()
 
@@ -66,15 +64,52 @@ call plug#end()
 " Maps
 "
 
-let mapleader=','
-let g:mapleader=','
-nmap <leader>w :w!<cr>
-nmap <leader>q :q<cr>
-nmap <leader>r :edit<cr>
+let mapleader = ','
+let g:mapleader = ','
 
-" Treat long lines as break lines (useful when moving around in them)
-" map j gj
-" map k gk
+" NERD Tree
+map <leader>n :NERDTreeToggle<cr>
+
+" Fast write, quit, refresh
+map <leader>w :w!<cr>
+map <leader>q :q<cr>
+map <leader>r :edit<cr>
+
+" Windows vertical & horizontal
+map <leader>\| :vnew<cr>
+map <leader>- :new<cr>
+
+" Windows navigation
+map <leader>j <C-W>j
+map <leader>k <C-W>k
+map <leader>l <C-W>l
+map <leader>h <C-W>h
+
+" Open terminal in new tab
+map <leader>s :tabnew \| terminal<cr>
+
+" Terminal adapt to normal navigation
+tnoremap <Esc> <C-\><C-n>
+tnoremap <leader>h <C-\><C-n><C-w>h
+tnoremap <leader>j <C-\><C-n><C-w>j
+tnoremap <leader>k <C-\><C-n><C-w>k
+tnoremap <leader>l <C-\><C-n><C-w>l
+
+" vim-commentary
+map <leader>c :Commentary<cr>
+
+" Tab
+map <leader>t :tabnew<cr>
+map <leader>1 1gt
+map <leader>2 2gt
+map <leader>3 3gt
+map <leader>4 4gt
+map <leader>5 5gt
+map <leader>6 6gt
+map <leader>7 7gt
+map <leader>8 8gt
+map <leader>9 9gt
+map <leader>0 :tablast<cr>
 
 " Move a line of text using CTRL+[jk] or Comamnd+[jk] on mac
 nmap <C-j> mz:m+<cr>`z
@@ -82,52 +117,26 @@ nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-" Tab
-nnoremap <C-t> :tabnew<cr>
-nnoremap <C-i> :tabnext<cr>
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
-
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR><Paste>
-
 "
 " Colors
 "
 
 syntax on
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if (has("termguicolors"))
+  set termguicolors
+endif
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme one
-colorscheme OceanicNext
+" colorscheme OceanicNext
 
 hi Comment gui=italic cterm=italic
 hi Normal guibg=none ctermbg=none
-hi LineNr guifg=none guibg=none ctermfg=8 ctermbg=0
-hi StatusLine guifg=none guibg=none ctermfg=8 ctermbg=0
-hi StatusLineNC guifg=none guibg=none ctermfg=8
-hi TabLineFill guibg=none ctermbg=0
-hi TabLine guibg=none ctermbg=0
-hi TabLineSel guibg=none ctermbg=0
-hi VertSplit guifg=none guibg=none ctermfg=0 ctermbg=0
-hi GitGutterAdd guibg=none ctermbg=none
-hi GitGutterChange guibg=none ctermbg=none
-hi GitGutterDelete guibg=none ctermbg=none
-hi GitGutterChangeDelete guibg=none ctermbg=none
-hi NeomakeErrorSign guibg=none ctermbg=none
-hi NeomakeWarningSign guibg=none ctermbg=none
+hi LineNr guibg=none ctermbg=none
+hi StatusLine guibg=none guifg=none
+hi VertSplit guibg=none ctermbg=none
 
+set fillchars+=vert:\ ,
 
 "
 " :)
@@ -138,11 +147,8 @@ set autoread
 set backspace=eol,start,indent
 set clipboard+=unnamedplus
 set cmdheight=1
-" set colorcolumn=80
-" set cursorline
 set encoding=utf-8
 set expandtab
-set fillchars+=vert:\
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
@@ -153,20 +159,19 @@ set laststatus=2
 set lazyredraw
 set mouse=a
 set nobackup
-" set noexpandtab
 set nofoldenable
+set noshowcmd
 set noswapfile
 set nowb
+set nowrap
 set number
 set numberwidth=3
 set ruler
 set shiftwidth=2
-set showcmd
 set showmatch
 set smartcase
 set smartindent
 set smarttab
-" set so=10
 set softtabstop=2
 set splitbelow
 set splitright
@@ -174,18 +179,17 @@ set tabstop=2
 set textwidth=80
 set whichwrap+=<,>,h,l
 set wildmenu
-set nowrap
 
 "
 " Format the status line
 "
 
-set statusline =
-set statusline +=\ %f       " File
-set statusline +=\ %l:%v    " Current line and column
-set statusline +=%=         " End line
-set statusline +=\ %{toupper(&fenc!=''?&fenc:&enc)}   " Encoding
-set statusline +=\ %{&ft!=''?&ft:'Plaint\ Text'}      " File type
+set statusline=
+set statusline+=\ %f                                 " File
+set statusline+=\ %l:%v                              " Current line and column
+set statusline+=%=                                   " End line
+set statusline+=\ %{toupper(&fenc!=''?&fenc:&enc)}   " Encoding
+set statusline+=\ %{&ft!=''?&ft:'Plaint\ Text'}      " File type
 
 "
 " Other
