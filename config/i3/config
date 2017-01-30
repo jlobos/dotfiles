@@ -5,7 +5,7 @@
 
 set $mod Mod4
 set $font Fira Mono 9
-set $terminal termite
+set $terminal konsole
 set $wall ~/.dotfiles/wallpaper.jpeg
 
 set $ws1  "1"
@@ -195,12 +195,9 @@ client.background       $black
 # Audio controls
 #
 
-bindsym XF86AudioMute exec --no-startup-id \
-  "pamixer --toggle-mute && killall -USR1 i3status"
-bindsym XF86AudioRaiseVolume exec --no-startup-id \
-  "pamixer --increase 5 --allow-boost && killall -USR1 i3status"
-bindsym XF86AudioLowerVolume exec --no-startup-id \
-  "pamixer --decrease 5 --allow-boost && killall -USR1 i3status"
+bindsym XF86AudioMute exec --no-startup-id "pamixer --toggle-mute && killall -USR1 i3status"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 5 --allow-boost && killall -USR1 i3status"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 5 --allow-boost && killall -USR1 i3status"
 
 #
 # Sreen controls
@@ -224,5 +221,4 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id compton
 exec --no-startup-id slack -uf
 
-exec_always --no-startup-id feh --bg-fill --no-xinerama $wall
-exec_always --no-startup-id ~/.dotfiles/scripts/screen.sh
+exec_always --no-startup-id ~/.dotfiles/scripts/screen.sh && feh --bg-fill --no-xinerama $wall
