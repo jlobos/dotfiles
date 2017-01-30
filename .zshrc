@@ -42,7 +42,6 @@ alias copy='xclip -selection clipboard'
 alias date='date "+%a %d %b %Y %H:%M"'
 alias p='pwd'
 alias f='feh --scale-down'
-alias hc='history -c'
 alias h='heroku'
 alias la='ls -A'
 alias ll='ls -alF'
@@ -55,7 +54,7 @@ alias onion-stop='systemctl stop tor'
 alias o='rhc'
 alias q='exit'
 alias t='tmux -2'
-alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev '
+alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
 
 # git
 
@@ -81,7 +80,6 @@ alias nodemon-babel='nodemon --exec ./node_modules/.bin/babel-node'
 alias i='npm i'
 alias r='npm r'
 alias npm-update='sudo npm-check -u -g'
-alias run='npm run -loglevel silent'
 
 # yarn
 
@@ -97,9 +95,9 @@ alias y='yarn'
 
 # OS Package Manager
 
-alias os-update='yaourt --noconfirm -Syua'
-alias os-install='yaourt -S'
-alias os-remove='yaourt -R'
+alias ou='yaourt --noconfirm -Syua'
+alias oi='yaourt -S'
+alias or='yaourt -R'
 
 # Docker
 
