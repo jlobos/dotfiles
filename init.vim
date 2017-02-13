@@ -4,6 +4,12 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'mhartington/oceanic-next'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
+Plug 'MaxSt/FlatColor'
+Plug 'jdkanani/vim-material-theme'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'freeo/vim-kalisi'
+Plug 'jlobos/perfect'
 
 " Snipmate
 Plug 'garbas/vim-snipmate'
@@ -16,8 +22,10 @@ Plug 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
 
 " Syntax
-Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
+Plug 'othree/html5.vim'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'digitaltoad/vim-pug'
@@ -39,10 +47,8 @@ Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 
 " Utils
 Plug 'scrooloose/nerdtree'
-let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = '<'
+let NERDTreeShowHidden = 1
 
 " Lint
 Plug 'benekastah/neomake'
@@ -117,24 +123,32 @@ nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+" j/k moves up/down row by row, not line by line
+noremap j gj
+noremap k gk
+
 "
-" Colors
+" UI
 "
 
 syntax on
-if (has("termguicolors"))
-  set termguicolors
-endif
+set termguicolors
 set background=dark
-colorscheme onedark
-" colorscheme one
-" colorscheme OceanicNext
 
-hi Comment gui=italic cterm=italic
-hi Normal guibg=none ctermbg=none
-hi LineNr guibg=none ctermbg=none
-hi StatusLine guibg=none guifg=none
-hi VertSplit guibg=none ctermbg=none
+colorscheme one
+" colorscheme onedark
+" colorscheme OceanicNext
+" colorscheme flatcolor
+" colorscheme material-theme
+" colorscheme hybrid_material
+" colorscheme quantum
+" colorscheme kalisi
+" colorscheme perfect
+
+" Hacking color scheme
+
+hi Normal guibg=none
+hi ErrorMsg guibg=none
 
 set fillchars+=vert:\ ,
 
@@ -152,12 +166,13 @@ set expandtab
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
+set hidden
 set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-set mouse=a
+set mouse=
 set nobackup
 set nofoldenable
 set noshowcmd
