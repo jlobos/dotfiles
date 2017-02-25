@@ -77,8 +77,13 @@ alias nodemon-babel='nodemon --exec ./node_modules/.bin/babel-node'
 
 # npm
 
-alias i='npm i'
-alias r='npm r'
+alias nb='npm run build'
+alias nc='npm run clean'
+alias ni='npm install'
+alias np='npm publish'
+alias nr='npm remove'
+alias ns='npm start'
+alias nt='npm test'
 alias npm-update='sudo npm-check -u -g'
 
 # yarn
