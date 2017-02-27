@@ -135,8 +135,8 @@ syntax on
 set termguicolors
 set background=dark
 
-colorscheme one
-" colorscheme onedark
+" colorscheme one
+colorscheme onedark
 " colorscheme OceanicNext
 " colorscheme flatcolor
 " colorscheme material-theme
@@ -146,11 +146,6 @@ colorscheme one
 " colorscheme perfect
 
 " Hacking color scheme
-
-hi Normal guibg=none
-hi ErrorMsg guibg=none
-
-set fillchars+=vert:\ ,
 
 "
 " :)
@@ -163,6 +158,7 @@ set clipboard+=unnamedplus
 set cmdheight=1
 set encoding=utf-8
 set expandtab
+set fillchars+=vert:\ ,
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
