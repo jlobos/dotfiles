@@ -219,6 +219,6 @@ bindsym Print exec --no-startup-id "scrot ~/$(date +%F-%T).png"
 
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id compton
-# exec --no-startup-id slack -uf
+exec --no-startup-id slack -uf
 
 exec_always --no-startup-id ~/.dotfiles/scripts/screen.sh && feh --bg-fill --no-xinerama $wall
