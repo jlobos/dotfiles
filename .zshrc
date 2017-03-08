@@ -28,8 +28,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export EDITOR='nvim'
 export LANG='es_CL.UTF-8'
-export VISUAL='nvim'
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+export VISUAL='nvim'
 
 #
 # Aliases
@@ -79,6 +79,7 @@ alias nodemon-babel='nodemon --exec ./node_modules/.bin/babel-node'
 
 alias nb='npm run build'
 alias nc='npm run clean'
+alias nd='npm run dev'
 alias ni='npm install'
 alias np='npm publish'
 alias nr='npm remove'
@@ -117,5 +118,5 @@ alias dstop='sudo systemctl stop docker'
 xset r rate 250 60
 
 # This loads nvm
-export NVM_DIR="/home/jlobos/.nvm"
+export NVM_DIR='/home/jlobos/.nvm'
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
