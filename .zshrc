@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # Prompt
 #
 
-local ret_status="%(?:%{$fg_bold[magenta]%} ◯ :%{$fg_bold[red]%} ◯ )"
+local ret_status="%(?:%{$fg_bold[magenta]%} ▰ :%{$fg_bold[red]%} ▰ )"
 PROMPT='${ret_status} %{$reset_color%}$(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{242}"
@@ -36,11 +36,9 @@ export VISUAL='nvim'
 #
 
 alias android='sh ~/Android/Sdk/tools/android'
-alias tr='source ~/.zshrc'
 alias c='clear'
 alias copy='xclip -selection clipboard'
 alias date='date "+%a %d %b %Y %H:%M"'
-alias p='pwd'
 alias f='feh --scale-down'
 alias h='heroku'
 alias la='ls -A'
@@ -52,7 +50,9 @@ alias nyan='telnet nyancat.dakko.us'
 alias onion-start='systemctl start tor && firefox --private-window'
 alias onion-stop='systemctl stop tor'
 alias o='rhc'
+alias p='pwd'
 alias q='exit'
+alias reload='source ~/.zshrc'
 alias t='tmux -2'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
 
@@ -108,6 +108,7 @@ alias or='yaourt -R'
 # Docker
 
 alias d='docker'
+alias dm='docker-machine'
 alias dstart='sudo systemctl start docker'
 alias dstop='sudo systemctl stop docker'
 
