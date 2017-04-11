@@ -1,51 +1,14 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" Colors
-Plug 'mhartington/oceanic-next'
-Plug 'rakr/vim-one'
+" Colorscheme
 Plug 'joshdick/onedark.vim'
-Plug 'MaxSt/FlatColor'
-Plug 'jdkanani/vim-material-theme'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'freeo/vim-kalisi'
-Plug 'jlobos/perfect'
-
-" Snipmate
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
 
-" Syntax
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-Plug 'othree/html5.vim'
-Plug 'ap/vim-css-color'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'digitaltoad/vim-pug'
-Plug 'elzr/vim-json'
-Plug 'gavocanov/vim-js-indent'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'kchmck/vim-coffee-script'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'posva/vim-vue'
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled = 1
-Plug 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
-
-" Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-
 " Utils
+Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/nerdtree'
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
@@ -53,7 +16,6 @@ let NERDTreeShowHidden = 1
 " Lint
 Plug 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['standard']
-let g:neomake_jsx_enabled_makers = ['standard']
 autocmd! BufWritePost * Neomake
 
 " Edit
@@ -63,6 +25,19 @@ Plug 'justinmk/vim-sneak'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+
+"
+" Syntax
+"
+
+" Pug
+Plug 'digitaltoad/vim-pug'
+" Javascript
+Plug 'gavocanov/vim-js-indent'
+Plug 'othree/es.next.syntax.vim'
+Plug 'othree/yajs.vim'
+" CoffeeScript
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
@@ -123,10 +98,6 @@ nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-" j/k moves up/down row by row, not line by line
-noremap j gj
-noremap k gk
-
 "
 " UI
 "
@@ -134,18 +105,10 @@ noremap k gk
 syntax on
 set termguicolors
 set background=dark
-
-" colorscheme one
 colorscheme onedark
-" colorscheme OceanicNext
-" colorscheme flatcolor
-" colorscheme material-theme
-" colorscheme hybrid_material
-" colorscheme quantum
-" colorscheme kalisi
-" colorscheme perfect
 
-" Hacking color scheme
+" transparent background color
+hi Normal guibg=NONE ctermfg=NONE
 
 "
 " :)
@@ -166,7 +129,7 @@ set hidden
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
+set laststatus=0
 set lazyredraw
 set mouse=
 set nobackup
@@ -190,17 +153,6 @@ set tabstop=2
 set textwidth=80
 set whichwrap+=<,>,h,l
 set wildmenu
-
-"
-" Format the status line
-"
-
-set statusline=
-set statusline+=\ %f                                 " File
-set statusline+=\ %l:%v                              " Current line and column
-set statusline+=%=                                   " End line
-set statusline+=\ %{toupper(&fenc!=''?&fenc:&enc)}   " Encoding
-set statusline+=\ %{&ft!=''?&ft:'Plaint\ Text'}      " File type
 
 "
 " Other

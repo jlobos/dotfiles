@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # Prompt
 #
 
-local ret_status="%(?:%{$fg_bold[magenta]%} ▰ :%{$fg_bold[red]%} ▰ )"
+local ret_status="%(?:%{$fg_bold[magenta]%} ▽ :%{$fg_bold[red]%} ▽ )"
 PROMPT='${ret_status} %{$reset_color%}$(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{242}"
@@ -37,29 +37,34 @@ export VISUAL='nvim'
 
 alias android='sh ~/Android/Sdk/tools/android'
 alias c='clear'
+alias ..='cd ..'
 alias copy='xclip -selection clipboard'
 alias date='date "+%a %d %b %Y %H:%M"'
+alias du='du -h'
 alias f='feh --scale-down'
 alias h='heroku'
-alias la='ls -A'
-alias ll='ls -alF'
 alias lol='lolcat -a'
-alias ls='ls -X --color=auto'
-alias l='tree -L 1 -Calsh'
 alias nyan='telnet nyancat.dakko.us'
-alias onion-start='systemctl start tor && firefox --private-window'
-alias onion-stop='systemctl stop tor'
 alias o='rhc'
 alias p='pwd'
 alias q='exit'
 alias reload='source ~/.zshrc'
-alias t='tmux -2'
+alias t='tree -C'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
+
+# list
+
+alias la='ls -AF'
+alias ll='ls -alF'
+alias ls='ls -X --color=auto'
+
+# tor
+
+alias onion-start='systemctl start tor && firefox --private-window'
+alias onion-stop='systemctl stop tor'
 
 # git
 
-alias gs='git status'
-alias gl='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
 alias g='git'
 
 # nvim
@@ -70,10 +75,7 @@ alias vi='nvim'
 
 # node
 
-alias babel='./node_modules/.bin/babel-node'
-alias babelwatch='./node_modules/.bin/babel --watch'
 alias n='node'
-alias nodemon-babel='nodemon --exec ./node_modules/.bin/babel-node'
 
 # npm
 
@@ -85,7 +87,7 @@ alias np='npm publish'
 alias nr='npm remove'
 alias ns='npm start'
 alias nt='npm test'
-alias npm-update='sudo npm-check -u -g'
+alias nu='sudo npm-check -u -g'
 
 # yarn
 
@@ -109,8 +111,8 @@ alias or='yaourt -R'
 
 alias d='docker'
 alias dm='docker-machine'
-alias dstart='sudo systemctl start docker'
-alias dstop='sudo systemctl stop docker'
+alias docker-start='sudo systemctl start docker'
+alias docker-stop='sudo systemctl stop docker'
 
 #
 # Others

@@ -5,8 +5,8 @@
 
 set $mod Mod4
 set $font Fira Mono 9
-set $terminal konsole
-set $wall ~/.dotfiles/wallpaper.jpeg
+set $terminal konsole -stylesheet ~/.dotfiles/konsole.css
+set $wall ~/.dotfiles/wallpapers/wallpaper.jpeg
 
 set $ws1  "1"
 set $ws2  "2"
@@ -221,4 +221,4 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id compton
 exec --no-startup-id slack -uf
 
-exec_always --no-startup-id ~/.dotfiles/scripts/screen.sh && feh --bg-fill --no-xinerama $wall
+exec_always --no-startup-id ~/.dotfiles/bin/screen && feh --bg-fill --no-xinerama $wall
