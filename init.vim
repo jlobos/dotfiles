@@ -108,7 +108,7 @@ set background=dark
 colorscheme onedark
 
 " transparent background color
-hi Normal guibg=NONE ctermfg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 "
 " :)
@@ -134,13 +134,12 @@ set lazyredraw
 set mouse=
 set nobackup
 set nofoldenable
+set noruler
 set noshowcmd
 set noswapfile
 set nowb
 set nowrap
 set number
-set numberwidth=3
-set ruler
 set shiftwidth=2
 set showmatch
 set smartcase
