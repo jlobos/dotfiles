@@ -95,6 +95,7 @@ alias ya='yarn add'
 alias yb='yarn run build'
 alias yc='yarn run clean'
 alias yd='yarn add --dev'
+alias yl='yarn lint'
 alias yr='yarn remove'
 alias ys='yarn start'
 alias yt='yarn test'
@@ -123,3 +124,6 @@ xset r rate 250 60
 # This loads nvm
 export NVM_DIR='/home/jlobos/.nvm'
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# added by travis gem
+[ -f /home/jlobos/.travis/travis.sh ] && source /home/jlobos/.travis/travis.sh
