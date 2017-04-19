@@ -115,6 +115,17 @@ alias dm='docker-machine'
 alias docker-start='sudo systemctl start docker'
 alias docker-stop='sudo systemctl stop docker'
 
+# Python
+
+alias py='python'
+alias py2='python2'
+
+# Virtualenv
+
+alias ve='virtualenv'
+alias activate='source bin/activate'
+alias deactivate='deactivate'
+
 #
 # Others
 #
