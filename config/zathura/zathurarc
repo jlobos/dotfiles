@@ -1,0 +1,33 @@
+#
+# Font
+#
+
+set font "Fira Code 9"
+
+#
+# UI
+#
+
+set default-bg                "#282a36"
+set default-fg                "#eff0eb"
+
+set statusbar-bg              "#282a36"
+set statusbar-fg              "#eff0eb"
+
+set inputbar-bg               "#282a36"
+set inputbar-fg               "#eff0eb"
+
+set notification-error-bg     "#282a36"
+set notification-error-fg     "#ff5c57"
+
+set notification-warning-bg   "#282a36"
+set notification-warning-fg   "#f3f99d"
+
+#
+# Other
+#
+
+set guioptions ""
+set adjust-open width
+set page-padding 0
+set selection-clipboard "clipboard"
