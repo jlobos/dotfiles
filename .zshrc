@@ -51,6 +51,7 @@ alias q='exit'
 alias reload='source ~/.zshrc'
 alias t='tree -C'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
+alias z='zathura --fork'
 
 # list
 
