@@ -39,6 +39,7 @@ alias android='sh ~/Android/Sdk/tools/android'
 alias c='clear'
 alias ..='cd ..'
 alias copy='xclip -selection clipboard'
+alias count='ls -l | wc -l'
 alias date='date "+%a %d %b %Y %H:%M"'
 alias du='du -h'
 alias f='feh --scale-down'
@@ -68,6 +69,11 @@ alias onion-stop='systemctl stop tor'
 # git
 
 alias g='git'
+alias ga='git a'
+alias gc='git c'
+alias gd='git d'
+alias gl='git l'
+alias gs='git s'
 
 # nvim
 
@@ -126,7 +132,6 @@ alias py2='python2'
 
 alias ve='virtualenv'
 alias activate='source bin/activate'
-alias deactivate='deactivate'
 
 #
 # Others
