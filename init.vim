@@ -16,6 +16,7 @@ let NERDTreeShowHidden = 1
 " Lint
 Plug 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['standard']
+" let g:neomake_javascript_enabled_makers = ['xo']
 autocmd! BufWritePost * Neomake
 
 " Edit
@@ -38,6 +39,8 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " CoffeeScript
 Plug 'kchmck/vim-coffee-script'
+" nginx
+Plug 'evanmiller/nginx-vim-syntax'
 
 call plug#end()
 
