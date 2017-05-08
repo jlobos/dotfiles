@@ -30,6 +30,9 @@ export EDITOR='nvim'
 export LANG='es_CL.UTF-8'
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export VISUAL='nvim'
+# go
+export GOPATH=$HOME/.go
+export PATH=$GOPATH:$GOPATH/bin:$PATH
 
 #
 # Aliases
@@ -119,9 +122,9 @@ alias or='yaourt -R'
 # Docker
 
 alias d='docker'
+alias dc='docker-compose'
 alias dm='docker-machine'
-alias docker-start='sudo systemctl start docker'
-alias docker-stop='sudo systemctl stop docker'
+alias ballenita='if systemctl status docker | grep "inactive"; then systemctl start docker; else systemctl stop docker; fi'
 
 # Python
 
