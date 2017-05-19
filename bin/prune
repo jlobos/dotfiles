@@ -1,0 +1,25 @@
+#!/bin/bash
+
+function prune() {
+  echo "deleting: $1"
+  rm -rf $1
+}
+
+# Command history
+prune ~/.node_repl_history
+prune ~/.python_history
+prune ~/.zsh_history
+
+# Cache
+prune ~/.cache
+prune ~/.standard-cache
+prune ~/.xo-cache
+prune ~/.pkg-cache
+
+# Others
+prune ~/.NERDTreeBookmarks
+prune ~/.thumbnails
+
+# SSH known host
+prune ~/.ssh/known_hosts
+prune ~/.ssh/known_hosts.old
