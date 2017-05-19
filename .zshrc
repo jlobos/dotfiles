@@ -28,8 +28,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export EDITOR='nvim'
 export LANG='es_CL.UTF-8'
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export VISUAL='nvim'
+# ruby
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # go
 export GOPATH=$HOME/.go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
@@ -46,10 +47,8 @@ alias count='ls -l | wc -l'
 alias date='date "+%a %d %b %Y %H:%M"'
 alias du='du -h'
 alias f='feh --scale-down'
-alias h='heroku'
 alias lol='lolcat -a'
 alias nyan='telnet nyancat.dakko.us'
-alias o='rhc'
 alias p='pwd'
 alias q='exit'
 alias reload='source ~/.zshrc'
@@ -58,18 +57,18 @@ alias t='tmux'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
 alias z='zathura --fork'
 
-# list
+# List
 
 alias la='ls -AF'
 alias ll='ls -alF'
 alias ls='ls -X --color=auto'
 
-# tor
+# Tor
 
 alias onion-start='systemctl start tor && firefox --private-window'
 alias onion-stop='systemctl stop tor'
 
-# git
+# Git
 
 alias g='git'
 alias ga='git a'
@@ -78,17 +77,17 @@ alias gd='git d'
 alias gl='git l'
 alias gs='git s'
 
-# nvim
+# Nvim
 
 alias e='nvim'
 alias vim='nvim'
 alias vi='nvim'
 
-# node
+# Node.js
 
 alias n='node'
 
-# npm
+# Npm
 
 alias nb='npm run build'
 alias nc='npm run clean'
@@ -100,7 +99,7 @@ alias ns='npm start'
 alias nt='npm test'
 alias nu='sudo npm-check -u -g'
 
-# yarn
+# Yarn
 
 alias ya='yarn add'
 alias yb='yarn run build'
@@ -135,6 +134,11 @@ alias py2='python2'
 
 alias ve='virtualenv'
 alias activate='source bin/activate'
+
+# Instant edit
+
+alias zzz='nvim ~/.dotfiles/.zshrc'
+alias vvv='nvim ~/.dotfiles/init.vim'
 
 #
 # Others
