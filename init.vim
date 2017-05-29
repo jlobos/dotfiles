@@ -39,7 +39,7 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " CoffeeScript
 Plug 'kchmck/vim-coffee-script'
-" nginx
+" Nginx
 Plug 'evanmiller/nginx-vim-syntax'
 
 call plug#end()
