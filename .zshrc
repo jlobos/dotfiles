@@ -146,6 +146,17 @@ alias vvv='nvim ~/.dotfiles/init.vim'
 
 xset r rate 250 60
 
+# listen music is love
+# commands: love next, prev, pause or play
+
+function love {
+  case $1 in
+    'next' ) playerctl next;;
+    'prev' ) playerctl previous;;
+    'pause' | 'play' ) playerctl play-pause;;
+  esac
+}
+
 # This loads nvm
 export NVM_DIR='/home/jlobos/.nvm'
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
