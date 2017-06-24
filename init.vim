@@ -41,6 +41,8 @@ Plug 'othree/yajs.vim'
 Plug 'kchmck/vim-coffee-script'
 " Nginx
 Plug 'evanmiller/nginx-vim-syntax'
+" Api Blueprint
+Plug 'kylef/apiblueprint.vim'
 
 call plug#end()
 
