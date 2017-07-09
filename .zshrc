@@ -13,12 +13,15 @@ source $ZSH/oh-my-zsh.sh
 # Prompt
 #
 
-local ret_status="%(?:%{$fg_bold[magenta]%} ▽ :%{$fg_bold[red]%} ▽ )"
-PROMPT='${ret_status} %{$reset_color%}$(git_prompt_info)'
+local prefix='▲'
+local ret_status="%(?:%{$fg_bold[white]%} $prefix :%{$fg_bold[red]%} $prefix )"
+local dir="%{$fg_bold[white]%}%c%{$reset_color%}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{242}"
+PROMPT='${ret_status} $dir $(git_prompt_info)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="at %{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{242} *"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%} *"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 #
@@ -27,7 +30,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export EDITOR='nvim'
-export LANG='es_CL.UTF-8'
+export LANG='en_US.UTF-8'
 export VISUAL='nvim'
 # ruby
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
@@ -45,14 +48,10 @@ alias ..='cd ..'
 alias copy='xclip -selection clipboard'
 alias count='ls -l | wc -l'
 alias date='date "+%a %d %b %Y %H:%M"'
-alias du='du -h'
-alias f='feh --scale-down'
 alias lol='lolcat -a'
 alias nyan='telnet nyancat.dakko.us'
-alias p='pwd'
 alias q='exit'
 alias reload='source ~/.zshrc'
-alias tree='tree -C'
 alias t='tmux'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
 alias z='zathura --fork'
