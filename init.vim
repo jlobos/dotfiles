@@ -43,6 +43,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'evanmiller/nginx-vim-syntax'
 " Api Blueprint
 Plug 'kylef/apiblueprint.vim'
+" CSS3
+Plug 'hail2u/vim-css3-syntax'
 
 call plug#end()
 
