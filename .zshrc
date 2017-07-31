@@ -54,6 +54,7 @@ alias q='exit'
 alias reload='source ~/.zshrc'
 alias t='tmux'
 alias v='amixer get Master | grep -E -o "[0-9]{1,3}?%" | head -1 | rev | cut -c 2- | rev'
+alias wifi='sudo create_ap wlp1s0 enp0s20u4 jlobitu meportobienmamita'
 alias z='zathura --fork'
 
 # List
