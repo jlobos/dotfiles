@@ -37,6 +37,8 @@ export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # go
 export GOPATH=$HOME/.go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
+# Fixing npm permissions
+export PATH=~/.npm-global/bin:$PATH
 
 #
 # Aliases
@@ -97,7 +99,7 @@ alias np='npm publish'
 alias nr='npm remove'
 alias ns='npm start'
 alias nt='npm test'
-alias nu='sudo npm-check -u -g'
+alias nu='npm update -g'
 
 # Yarn
 
