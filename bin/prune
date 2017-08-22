@@ -43,3 +43,8 @@ prune ~/.ssh/known_hosts.old
 
 # Trash
 prune ~/.local/share/Trash/*
+
+# System
+sudo rm /var/log/journal/* -rf
+sudo rm /var/log/mongodb/* -rf
+sudo rm /var/cache/pacman/pkg/* -rf
