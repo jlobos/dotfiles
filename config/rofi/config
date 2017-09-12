@@ -1,6 +1,0 @@
-rofi.opacity: 90
-rofi.color-enabled: true
-rofi.color-window: #282a36, #282a36, #282a36
-rofi.color-normal: #282a36, #f1f1f0, #282a36, #282a36, #f1f1f0
-rofi.color-active: #282a36, #f1f1f0, #282a36, #282a36, #f1f1f0
-rofi.color-urgent: #282a36, #f1f1f0, #282a36, #282a36, #f1f1f0

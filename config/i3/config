@@ -4,9 +4,8 @@
 #
 
 set $mod Mod4
-set $font Fira Mono 9
+set $font Fira Code 9
 set $terminal konsole -stylesheet ~/.dotfiles/konsole.css
-set $wall ~/.dotfiles/wallpapers/wallpaper.jpeg
 
 set $ws1  "1"
 set $ws2  "2"
@@ -44,18 +43,13 @@ set $transparent    #00000000
 # Windows
 #
 
-new_window pixel 0
-new_float pixel 0
-smart_borders on
-gaps inner 10
-gaps outer 0
+new_window none
 
 font pango: $font
 floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+q kill
-bindsym $mod+d exec rofi -show run -fullscreen -font '$font' -separator-style none
 
 # change focus
 bindsym $mod+h focus left
@@ -148,23 +142,7 @@ client.urgent           $background $background $red   $red       $red
 client.background       $black
 
 #
-# Audio controls
-#
-
-bindsym XF86AudioMute exec --no-startup-id "pamixer --toggle-mute && killall -USR1 i3status"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 5 --allow-boost && killall -USR1 i3status"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 5 --allow-boost && killall -USR1 i3status"
-
-#
-# Sreen controls
-#
-
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 20"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 20"
-bindsym XF86Display exec --no-startup-id "arandr"
-
-#
-# Imp Pan
+# Impr Pant
 #
 
 bindsym Print exec --no-startup-id "scrot ~/$(date +%F-%T).png"
@@ -173,8 +151,5 @@ bindsym Print exec --no-startup-id "scrot ~/$(date +%F-%T).png"
 # Autostart
 #
 
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id compton
-# exec --no-startup-id slack -uf
-
-exec_always --no-startup-id ~/.dotfiles/bin/screen && feh --bg-fill --no-xinerama $wall
+exec --no-startup-id VBoxClient-all
+exec --no-startup-id konsole -stylesheet ~/.dotfiles/konsole.css
