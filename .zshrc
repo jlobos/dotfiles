@@ -30,7 +30,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export EDITOR='nvim'
-export LANG='es_US.UTF-8'
+export LANG='en_US.UTF-8'
 export VISUAL='nvim'
 # go
 export GOPATH=$HOME/.go
