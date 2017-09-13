@@ -9,6 +9,12 @@ function prune() {
 prune ~/.node_repl_history
 prune ~/.python_history
 prune ~/.zsh_history
+prune ~/.bash_history
+
+# Useless
+prune ~/.bash_logout
+prune ~/.bash_profile
+prune ~/.wget-hsts
 
 # Cache
 prune ~/.cache
