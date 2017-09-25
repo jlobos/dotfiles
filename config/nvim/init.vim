@@ -39,8 +39,6 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 " CoffeeScript
 Plug 'kchmck/vim-coffee-script'
-" Nginx
-Plug 'evanmiller/nginx-vim-syntax'
 " Api Blueprint
 Plug 'kylef/apiblueprint.vim'
 " CSS3
