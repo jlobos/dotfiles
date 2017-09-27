@@ -85,16 +85,6 @@ alias dc='docker-compose'
 alias dm='docker-machine'
 alias ballenita='if systemctl status docker | grep "inactive"; then systemctl start docker; else systemctl stop docker; fi'
 
-# Python
-
-alias py='python'
-alias py2='python2'
-
-# Virtualenv
-
-alias ve='virtualenv'
-alias activate='source bin/activate'
-
 # Instant edit
 
 alias zzz='nvim ~/.dotfiles/.zshrc'
