@@ -32,7 +32,9 @@ export ANDROID_HOME='/home/jlobos/Android/Sdk/'
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 export VISUAL='nvim'
-# go
+# Ruby
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# Go
 export GOPATH=$HOME/.go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
 # Fixing npm permissions
@@ -95,3 +97,6 @@ alias vvv='nvim ~/.dotfiles/config/nvim/init.vim'
 #
 
 xset r rate 250 60
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
