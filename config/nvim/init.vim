@@ -20,10 +20,7 @@ let g:neomake_javascript_enabled_makers = ['standard']
 autocmd! BufWritePost * Neomake
 
 " Edit
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'justinmk/vim-sneak'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
@@ -31,18 +28,14 @@ Plug 'tpope/vim-surround'
 " Syntax
 "
 
-" Pug
-Plug 'digitaltoad/vim-pug'
 " Javascript
 Plug 'gavocanov/vim-js-indent'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-" CoffeeScript
-Plug 'kchmck/vim-coffee-script'
-" Api Blueprint
-Plug 'kylef/apiblueprint.vim'
 " CSS3
 Plug 'hail2u/vim-css3-syntax'
+" nginx
+Plug 'chr4/nginx.vim'
 
 call plug#end()
 
