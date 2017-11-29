@@ -63,6 +63,8 @@ alias ls='ls -X --color=auto'
 # Git
 
 alias g='git'
+alias s='git status'
+alias logs="git log --graph --abbrev-commit --all --decorate --pretty=format:'%C(blue)%h%C(reset) · %C(bold green)%cn%C(reset) %C(green)%ar%C(reset) -> %s%C(bold yellow)%d%C(reset)'"
 
 # Neovim
 
