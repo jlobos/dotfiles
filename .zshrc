@@ -28,7 +28,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # Environment variables
 #
 
-export ANDROID_HOME='/home/jlobos/Android/Sdk/'
+export ANDROID_HOME="$HOME/Android/Sdk/"
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 export VISUAL='nvim'
