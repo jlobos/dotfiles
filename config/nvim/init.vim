@@ -1,14 +1,14 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
-Plug 'joshdick/onedark.vim'
+Plug 'jlobos/camila'
 
 " Git
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
 
 " Utils
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/nerdtree'
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
@@ -29,10 +29,13 @@ Plug 'tpope/vim-surround'
 "
 
 " Javascript
-Plug 'gavocanov/vim-js-indent'
-Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
-" CSS3
+Plug 'othree/es.next.syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'alampros/vim-styled-jsx'
+let g:jsx_ext_required = 0
+" CSS
+Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 " nginx
 Plug 'chr4/nginx.vim'
@@ -96,17 +99,16 @@ nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+" Quickly edit/reload this configuration file
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 "
 " UI
 "
 
 syntax on
 set termguicolors
-set background=dark
-colorscheme onedark
-
-" transparent background color
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme camila
 
 "
 " :)
@@ -132,12 +134,12 @@ set lazyredraw
 set mouse=
 set nobackup
 set nofoldenable
+set nonumber
 set noruler
 set noshowcmd
 set noswapfile
 set nowb
 set nowrap
-set number
 set shiftwidth=2
 set showmatch
 set smartcase
@@ -155,12 +157,15 @@ set wildmenu
 " Other
 "
 
+" Filetype detect for .babelrc
+autocmd BufRead .babelrc set filetype=json
+
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+" command W w !sudo tee % > /dev/null
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
