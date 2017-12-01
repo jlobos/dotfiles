@@ -8,3 +8,4 @@ fi
 
 sudo pacman -Scc
 sudo pacman-optimize
+sudo pacman -Syy
