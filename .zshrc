@@ -32,8 +32,6 @@ export ANDROID_HOME="$HOME/Android/Sdk/"
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 export VISUAL='nvim'
-# Ruby
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # Go
 export GOPATH=$HOME/.go
 export PATH=$GOPATH:$GOPATH/bin:$PATH
@@ -48,8 +46,6 @@ alias android='sh ~/Android/Sdk/tools/android'
 alias c='clear'
 alias ..='cd ..'
 alias copy='xclip -selection clipboard'
-alias lol='lolcat -a'
-alias nyan='telnet nyancat.dakko.us'
 alias q='exit'
 alias reload='source ~/.zshrc'
 alias t='tmux'
@@ -99,6 +95,3 @@ alias vvv='nvim ~/.dotfiles/config/nvim/init.vim'
 #
 
 xset r rate 250 60
-
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh

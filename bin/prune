@@ -29,19 +29,11 @@ prune ~/.hashcat
 prune ~/.local/share/RecentDocuments
 prune ~/.sqlmap/output
 
-# jd
-prune ~/.jd/logs
-
 # Config
 prune ~/.config/autostart
 prune ~/.config/cef_user_data
 prune ~/.config/gpick
 prune ~/.config/obs-studio
-
-# Slack
-prune ~/.config/Slack/Cache/*
-prune ~/.config/Slack/GPUCache/*
-prune ~/.config/Slack/logs/*
 
 # SSH known host
 prune ~/.ssh/known_hosts
@@ -52,5 +44,4 @@ prune ~/.local/share/Trash/*
 
 # System
 sudo rm /var/log/journal/* -rf
-sudo rm /var/log/mongodb/* -rf
 sudo rm /var/cache/pacman/pkg/* -rf

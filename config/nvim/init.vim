@@ -8,7 +8,7 @@ Plug 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
 
 " Utils
-" Plug 'metakirby5/codi.vim'
+Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/nerdtree'
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
@@ -149,7 +149,6 @@ set softtabstop=2
 set splitbelow
 set splitright
 set tabstop=2
-set textwidth=80
 set whichwrap+=<,>,h,l
 set wildmenu
 
