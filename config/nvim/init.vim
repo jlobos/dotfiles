@@ -15,8 +15,8 @@ let NERDTreeShowHidden = 1
 
 " Lint
 Plug 'benekastah/neomake'
-let g:neomake_javascript_enabled_makers = ['standard']
-" let g:neomake_javascript_enabled_makers = ['xo']
+" let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_javascript_enabled_makers = ['xo']
 autocmd! BufWritePost * Neomake
 
 " Edit
@@ -24,21 +24,21 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'json', 'css'] }
+
 "
 " Syntax
 "
 
-" Javascript
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'alampros/vim-styled-jsx'
-let g:jsx_ext_required = 0
 " CSS
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 " nginx
 Plug 'chr4/nginx.vim'
+" Go
+Plug 'fatih/vim-go'
 
 call plug#end()
 
