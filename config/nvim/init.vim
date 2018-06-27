@@ -39,6 +39,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'chr4/nginx.vim'
 " Go
 Plug 'fatih/vim-go'
+" Kotlin
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
