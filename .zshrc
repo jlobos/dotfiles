@@ -96,3 +96,6 @@ alias vvv='nvim ~/.dotfiles/config/nvim/init.vim'
 #
 
 xset r rate 250 60
+
+# Gradle tab completion for bash and zsh
+fpath=(/home/j/.zsh/gradle-completion $fpath)
