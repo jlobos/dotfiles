@@ -8,16 +8,16 @@ Plug 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
 
 " Utils
+Plug 'junegunn/fzf.vim'
 Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/nerdtree'
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
 
 " Lint
-Plug 'benekastah/neomake'
-" let g:neomake_javascript_enabled_makers = ['standard']
-let g:neomake_javascript_enabled_makers = ['xo']
-autocmd! BufWritePost * Neomake
+Plug 'w0rp/ale'
+let g:ale_fix_on_save = 1
+let g:ale_kotlin_kotlinc_classpath = $ANDROID_HOME.'platforms/android-28/android.jar'
 
 " Edit
 Plug 'jiangmiao/auto-pairs'
@@ -41,6 +41,8 @@ Plug 'chr4/nginx.vim'
 Plug 'fatih/vim-go'
 " Kotlin
 Plug 'udalov/kotlin-vim'
+autocmd Filetype kotlin setlocal tabstop=4 shiftwidth=4
+autocmd FileType kotlin setlocal commentstring=//\ %s
 
 call plug#end()
 
@@ -54,14 +56,16 @@ let g:mapleader = ','
 " NERD Tree
 map <leader>n :NERDTreeToggle<cr>
 
+" fzf ❤️ vim
+map <leader>f :FZF<cr>
+
+" vim-commentary
+map <leader>c :Commentary<cr>
+
 " Fast write, quit, refresh
 map <leader>w :w!<cr>
 map <leader>q :q<cr>
 map <leader>r :edit<cr>
-
-" Windows vertical & horizontal
-map <leader>\| :vnew<cr>
-map <leader>- :new<cr>
 
 " Windows navigation
 map <leader>j <C-W>j
@@ -69,31 +73,18 @@ map <leader>k <C-W>k
 map <leader>l <C-W>l
 map <leader>h <C-W>h
 
-" Open terminal in new tab
-map <leader>s :tabnew \| terminal<cr>
-
-" Terminal adapt to normal navigation
-tnoremap <Esc> <C-\><C-n>
-tnoremap <leader>h <C-\><C-n><C-w>h
-tnoremap <leader>j <C-\><C-n><C-w>j
-tnoremap <leader>k <C-\><C-n><C-w>k
-tnoremap <leader>l <C-\><C-n><C-w>l
-
-" vim-commentary
-map <leader>c :Commentary<cr>
-
 " Tab
 map <leader>t :tabnew<cr>
-map <leader>1 1gt
-map <leader>2 2gt
-map <leader>3 3gt
-map <leader>4 4gt
-map <leader>5 5gt
-map <leader>6 6gt
-map <leader>7 7gt
-map <leader>8 8gt
-map <leader>9 9gt
-map <leader>0 :tablast<cr>
+" map <leader>1 1gt
+" map <leader>2 2gt
+" map <leader>3 3gt
+" map <leader>4 4gt
+" map <leader>5 5gt
+" map <leader>6 6gt
+" map <leader>7 7gt
+" map <leader>8 8gt
+" map <leader>9 9gt
+" map <leader>0 :tablast<cr>
 
 " Move a line of text using CTRL+[jk] or Comamnd+[jk] on mac
 nmap <C-j> mz:m+<cr>`z
