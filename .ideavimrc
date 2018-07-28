@@ -1,0 +1,29 @@
+"
+" Maps
+"
+
+let mapleader = ','
+let g:mapleader = ','
+
+" Fast write, quit, refresh
+map <leader>w :w!<cr>
+map <leader>q :q<cr>
+
+" IdeaVim Actions
+map <leader>n :action ActivateProjectToolWindow<cr>
+map <leader>c :action CommentByLineComment<cr>
+map <leader>f :action GotoFile<cr>
+map <leader>r :action Run<cr>
+map <leader>d :action Debug<cr>
+nmap <unique> <leader>p :action ReformatCode<cr>
+
+"
+" 🖤
+"
+
+set visualbell
+set noerrorbells
+set clipboard+=unnamedplus
+
+" Plugins
+set surround
