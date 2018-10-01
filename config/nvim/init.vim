@@ -17,7 +17,6 @@ let NERDTreeShowHidden = 1
 " Lint
 Plug 'w0rp/ale'
 let g:ale_fix_on_save = 1
-let g:ale_kotlin_kotlinc_classpath = $ANDROID_HOME.'platforms/android-28/android.jar'
 
 " Edit
 Plug 'jiangmiao/auto-pairs'
@@ -99,9 +98,15 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " UI
 "
 
+" let g:SnazzyTransparent = 1
+
 syntax on
 set termguicolors
 colorscheme camila
+" colorscheme snazzy
+" colorscheme onedark
+
+hi Normal guibg=NONE ctermbg=NONE
 
 "
 " :)
