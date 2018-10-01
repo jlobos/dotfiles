@@ -74,16 +74,6 @@ map <leader>h <C-W>h
 
 " Tab
 map <leader>t :tabnew<cr>
-" map <leader>1 1gt
-" map <leader>2 2gt
-" map <leader>3 3gt
-" map <leader>4 4gt
-" map <leader>5 5gt
-" map <leader>6 6gt
-" map <leader>7 7gt
-" map <leader>8 8gt
-" map <leader>9 9gt
-" map <leader>0 :tablast<cr>
 
 " Move a line of text using CTRL+[jk] or Comamnd+[jk] on mac
 nmap <C-j> mz:m+<cr>`z
@@ -103,10 +93,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 syntax on
 set termguicolors
 colorscheme camila
-" colorscheme snazzy
-" colorscheme onedark
-
-hi Normal guibg=NONE ctermbg=NONE
 
 "
 " :)
