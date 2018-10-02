@@ -23,7 +23,7 @@ module.exports = {
 
     // for environment variables
     env: {
-      // LANG: 'es_ES.UTF-8',
+      LANG: 'en_US.UTF-8',
     },
     bell: 'false',
 
