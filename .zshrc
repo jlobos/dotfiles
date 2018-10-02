@@ -27,8 +27,8 @@ PROMPT='${ret_status} $dir $(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="at %{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%} *"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%} ✖"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✔"
 
 #
 # Environment variables
