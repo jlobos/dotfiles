@@ -5,8 +5,9 @@
 let mapleader = ','
 let g:mapleader = ','
 
-map <leader>w :w!<cr>       " ┐ Fast write, quit, refresh
-map <leader>q :q<cr>        " ┘
+" Fast write and quit
+map <leader>w :w!<cr>
+map <leader>q :q<cr>
 
 " IntelliJ IDEA / IdeaVim Actions
 map <leader>f :action GotoFile<cr>
