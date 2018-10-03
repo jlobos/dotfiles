@@ -5,25 +5,29 @@
 let mapleader = ','
 let g:mapleader = ','
 
-" Fast write, quit, refresh
-map <leader>w :w!<cr>
-map <leader>q :q<cr>
+map <leader>w :w!<cr>       " ┐ Fast write, quit, refresh
+map <leader>q :q<cr>        " ┘
 
-" IdeaVim Actions
-map <leader>n :action ActivateProjectToolWindow<cr>
-map <leader>c :action CommentByLineComment<cr>
+" IntelliJ IDEA / IdeaVim Actions
 map <leader>f :action GotoFile<cr>
+map <leader>n :action ActivateProjectToolWindow<cr>
+map <leader>l :action ActivateLogcatToolWindow<cr>
+
 map <leader>r :action Run<cr>
 map <leader>d :action Debug<cr>
+
+" Edit
+map <leader>c :action CommentByLineComment<cr>
 nmap <unique> <leader>p :action ReformatCode<cr>
 
 "
 " 🖤
 "
 
-set visualbell
-set noerrorbells
-set clipboard+=unnamedplus
+set visualbell              " ┐ Desactivar sonidos
+set noerrorbells            " ┘
+
+set clipboard+=unnamedplus  " Compartir el portapales del sistema
 
 " Plugins
 set surround
