@@ -1,45 +1,47 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
-Plug 'jlobos/camila'
+
+Plug 'joshdick/onedark.vim'
 
 " Git
-Plug 'airblade/vim-gitgutter'
-let g:gitgutter_map_keys = 0
+
+Plug 'airblade/vim-gitgutter'   " ┐ Shows a git diff in the gutter.
+let g:gitgutter_map_keys = 0    " ┘ Disable all key mappings.
 
 " Utils
-Plug 'junegunn/fzf.vim'
-Plug 'metakirby5/codi.vim'
-Plug 'scrooloose/nerdtree'
-let NERDTreeMinimalUI = 1
-let NERDTreeShowHidden = 1
+
+Plug '/usr/local/opt/fzf'       " ┐ fzf is a general-purpose
+Plug 'junegunn/fzf.vim'         " ┘ command-line fuzzy finder.
 
 " Lint
-Plug 'w0rp/ale'
-let g:ale_fix_on_save = 1
+
+Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
+let g:ale_fix_on_save = 1       " ┘ Fix files when you save them.
+
+" Wrapper for prettier
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 " Edit
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'json', 'css'] }
+Plug 'jiangmiao/auto-pairs'     " Insert or delete brackets,
+                                " parens, quotes in pair.
 
-"
+Plug 'tpope/vim-commentary'     " Comment stuff out.
+
+Plug 'tpope/vim-surround'       " Mappings to easily delete, change
+                                " and add such surroundings in pairs.
+
 " Syntax
-"
 
-" CSS
-Plug 'ap/vim-css-color'
-Plug 'hail2u/vim-css3-syntax'
-" nginx
-Plug 'chr4/nginx.vim'
-" Go
-Plug 'fatih/vim-go'
-" Kotlin
-Plug 'udalov/kotlin-vim'
+Plug 'ap/vim-css-color'         " ┐ Preview colours in source code.
+Plug 'hail2u/vim-css3-syntax'   " ┘ CSS3 syntax.
+
+Plug 'chr4/nginx.vim'           " NGINX syntax highlighting.
+
+Plug 'fatih/vim-go'             " Go development plugin.
+
+Plug 'udalov/kotlin-vim'        " Kotlin syntax.
 autocmd Filetype kotlin setlocal tabstop=4 shiftwidth=4
 autocmd FileType kotlin setlocal commentstring=//\ %s
 
@@ -52,8 +54,10 @@ call plug#end()
 let mapleader = ','
 let g:mapleader = ','
 
-" NERD Tree
-map <leader>n :NERDTreeToggle<cr>
+" Exploration
+map <leader>e :Explore<cr>
+let g:netrw_banner = 0          " Removing the banner.
+let g:netrw_liststyle = 3       " Directory view in netrw.
 
 " fzf ❤️ vim
 map <leader>f :FZF<cr>
@@ -82,17 +86,28 @@ vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Quickly edit/reload this configuration file
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>v :source $MYVIMRC<cr>
 
 "
 " UI
 "
 
-" let g:SnazzyTransparent = 1
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 syntax on
-set termguicolors
-colorscheme camila
+
+colorscheme onedark
+set background=dark
+
+" Transparent background
+hi Normal       guibg=none ctermbg=none
+hi LineNr       guibg=none ctermbg=none
+hi SignColumn   guibg=none ctermbg=none
+
+" Comments Italic
+hi Comment      gui=italic cterm=italic
 
 "
 " :)
