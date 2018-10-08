@@ -43,6 +43,7 @@ export LANG='en_US.UTF-8'
 
 alias ..='cd ..'
 alias c='clear'
+alias copy='pbcopy'
 alias q='exit'
 alias reload='source ~/.zshrc'
 
