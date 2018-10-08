@@ -14,6 +14,22 @@ let g:gitgutter_map_keys = 0    " ┘ Disable all key mappings.
 Plug '/usr/local/opt/fzf'       " ┐ fzf is a general-purpose
 Plug 'junegunn/fzf.vim'         " ┘ command-line fuzzy finder.
 
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'Normal'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 " Lint
 
 Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
@@ -101,10 +117,10 @@ syntax on
 colorscheme onedark
 set background=dark
 
-" Transparent background
-hi Normal       guibg=none ctermbg=none
-hi LineNr       guibg=none ctermbg=none
-hi SignColumn   guibg=none ctermbg=none
+" Color of background
+hi Normal       guibg=#232323
+hi LineNr       guibg=#232323
+hi SignColumn   guibg=#232323
 
 " Comments Italic
 hi Comment      gui=italic cterm=italic
