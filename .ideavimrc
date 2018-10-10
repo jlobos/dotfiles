@@ -11,7 +11,7 @@ map <leader>q :q<cr>
 
 " IntelliJ IDEA / IdeaVim Actions
 map <leader>f :action GotoFile<cr>
-map <leader>n :action ActivateProjectToolWindow<cr>
+map <leader>e :action ActivateProjectToolWindow<cr>
 map <leader>l :action ActivateLogcatToolWindow<cr>
 
 map <leader>r :action Run<cr>
