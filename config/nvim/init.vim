@@ -104,6 +104,9 @@ vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 " Quickly edit/reload this configuration file
 nnoremap <leader>v :source $MYVIMRC<cr>
 
+" To map <Esc> to exit terminal-mode
+tnoremap <Esc> <C-\><C-n>
+
 "
 " UI
 "
