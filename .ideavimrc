@@ -11,11 +11,15 @@ map <leader>q :q<cr>
 
 " IntelliJ IDEA / IdeaVim Actions
 map <leader>f :action GotoFile<cr>
+map <leader>t :action GotoTest<cr>
 map <leader>e :action ActivateProjectToolWindow<cr>
 map <leader>l :action ActivateLogcatToolWindow<cr>
 
-map <leader>r :action Run<cr>
-map <leader>d :action Debug<cr>
+" Run
+map <leader>r :action RunClass<cr>
+map <leader>R :action Run<cr>
+map <leader>d :action DebugClass<cr>
+map <leader>D :action Debug<cr>
 
 " Edit
 map <leader>c :action CommentByLineComment<cr>
