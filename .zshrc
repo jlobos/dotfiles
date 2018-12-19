@@ -37,6 +37,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✔"
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 
+export PATH="/Users/j/Library/Python/2.7/bin:$PATH"
+
 #
 # Aliases
 #
