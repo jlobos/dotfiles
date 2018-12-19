@@ -34,6 +34,9 @@ let g:fzf_colors =
 
 Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
 let g:ale_fix_on_save = 1       " ┘ Fix files when you save them.
+let g:ale_fixers = {
+\   'javascript': ['xo'],
+\}
 
 " Wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -60,6 +63,8 @@ Plug 'fatih/vim-go'             " Go development plugin.
 Plug 'udalov/kotlin-vim'        " Kotlin syntax.
 autocmd Filetype kotlin setlocal tabstop=4 shiftwidth=4
 autocmd FileType kotlin setlocal commentstring=//\ %s
+
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -173,6 +178,10 @@ set wildmenu
 "
 " Other
 "
+
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+autocmd FileType netrw setl bufhidden=delete
 
 " Filetype detect for .babelrc
 autocmd BufRead .babelrc set filetype=json
