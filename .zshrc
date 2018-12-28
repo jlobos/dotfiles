@@ -11,6 +11,15 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
+
+  # System clipboard integration
+  #
+  # Usage:
+  # <command> | clipcopy
+  clipboard
+
+  # Type `git open` to open repo website
+  git-open
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -39,13 +48,15 @@ export LANG='en_US.UTF-8'
 
 export PATH="/Users/j/Library/Python/2.7/bin:$PATH"
 
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 #
 # Aliases
 #
 
 alias ..='cd ..'
 alias c='clear'
-alias copy='pbcopy'
 alias q='exit'
 alias reload='source ~/.zshrc'
 
@@ -68,10 +79,8 @@ alias n='node'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
-alias ballenita='if systemctl status docker | grep "inactive"; then systemctl start docker; else systemctl stop docker; fi'
 
 # Instant Edit
 
-alias hhh='nvim ~/.hyper.js'
 alias vvv='nvim ~/.config/nvim/init.vim'
 alias zzz='nvim ~/.zshrc'
