@@ -3,6 +3,11 @@ call plug#begin('~/.config/nvim/plugged')
 " Colorscheme
 
 Plug 'joshdick/onedark.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/seoul256.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'arcticicestudio/nord-vim'
 
 " Git
 
@@ -53,6 +58,8 @@ Plug 'tpope/vim-surround'       " Mappings to easily delete, change
 
 " Syntax
 
+Plug 'pangloss/vim-javascript'  " Javascript indentation and syntax support.
+
 Plug 'ap/vim-css-color'         " ┐ Preview colours in source code.
 Plug 'hail2u/vim-css3-syntax'   " ┘ CSS3 syntax.
 
@@ -64,7 +71,7 @@ Plug 'udalov/kotlin-vim'        " Kotlin syntax.
 autocmd Filetype kotlin setlocal tabstop=4 shiftwidth=4
 autocmd FileType kotlin setlocal commentstring=//\ %s
 
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'          " The essential toolkit for web-developers.
 
 call plug#end()
 
@@ -80,8 +87,8 @@ map <leader>e :Explore<cr>
 let g:netrw_banner = 0          " Removing the banner.
 let g:netrw_liststyle = 3       " Directory view in netrw.
 
-" fzf ❤️ vim
-map <leader>f :FZF<cr>
+" fzf
+map <leader>f :Files<cr>
 
 " vim-commentary
 map <leader>c :Commentary<cr>
@@ -122,13 +129,9 @@ endif
 
 syntax on
 
-colorscheme onedark
-set background=dark
+colorscheme dracula
 
-" Color of background
-hi Normal       guibg=#232323
-hi LineNr       guibg=#232323
-hi SignColumn   guibg=#232323
+set background=dark
 
 " Comments Italic
 hi Comment      gui=italic cterm=italic
@@ -188,10 +191,6 @@ autocmd BufRead .babelrc set filetype=json
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
-
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-" command W w !sudo tee % > /dev/null
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
