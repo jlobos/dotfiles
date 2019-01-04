@@ -37,11 +37,13 @@ let g:fzf_colors =
 
 " Lint
 
+" Ale
 Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
 let g:ale_fix_on_save = 1       " ┘ Fix files when you save them.
-let g:ale_fixers = {
-\   'javascript': ['xo'],
-\}
+let g:ale_sign_warning = '→'
+let g:ale_sign_error = '→'
+let g:ale_fixers = {'javascript': ['prettier']}
+let g:ale_linters = {'javascript': ['xo']}
 
 " Wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -89,6 +91,8 @@ let g:netrw_liststyle = 3       " Directory view in netrw.
 
 " fzf
 map <leader>f :Files<cr>
+" ag (the_silver_searcher) search result
+map <leader>a :Ag<space>
 
 " vim-commentary
 map <leader>c :Commentary<cr>
