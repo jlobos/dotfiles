@@ -2,12 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
 
-Plug 'joshdick/onedark.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'junegunn/seoul256.vim'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'arcticicestudio/nord-vim'
 
 " Git
 
