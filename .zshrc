@@ -12,12 +12,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
 
-  # System clipboard integration
-  #
-  # Usage:
-  # <command> | clipcopy
-  clipboard
-
   # Type `git open` to open repo website
   git-open
 )

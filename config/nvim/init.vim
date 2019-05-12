@@ -60,7 +60,7 @@ call plug#end()
 " Maps
 "
 
-let mapleader = ','
+" Remap leader key to ,
 let g:mapleader = ','
 
 " Exploration
@@ -72,14 +72,16 @@ let g:netrw_liststyle = 3       " Directory view in netrw.
 map <leader>f :Files<cr>
 " ag (the_silver_searcher) search result
 map <leader>a :Ag<space>
+" Open buffers
+map <leader>b :Buffers<cr>
 
 " vim-commentary
 map <leader>c :Commentary<cr>
 
-" Fast write, quit, refresh
+" Fast write, quit, refresh (edit)
 map <leader>w :w!<cr>
 map <leader>q :q<cr>
-map <leader>r :edit<cr>
+map <leader>r :e!<cr>
 
 " Windows navigation
 map <leader>j <C-W>j
@@ -90,15 +92,11 @@ map <leader>h <C-W>h
 " Tab
 map <leader>t :tabnew<cr>
 
-" Move a line of text using CTRL+[jk] or Comamnd+[jk] on mac
-nmap <C-j> mz:m+<cr>`z
-nmap <C-k> mz:m-2<cr>`z
-vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
 " Quickly edit/reload this configuration file
 nnoremap <leader>v :source $MYVIMRC<cr>
 
+" Terminal
+map <leader>s :terminal<cr>
 " To map <Esc> to exit terminal-mode
 tnoremap <Esc> <C-\><C-n>
 
@@ -106,60 +104,94 @@ tnoremap <Esc> <C-\><C-n>
 " UI
 "
 
-if (has("termguicolors"))
-  set termguicolors
-endif
+" Enable true color support
+set termguicolors
 
 syntax on
-
 colorscheme dracula
 
-set background=dark
-
-" Comments Italic
-hi Comment      gui=italic cterm=italic
+" Vertical Split bar styling
+hi VertSplit guibg=bg guifg=bg
 
 "
-" :)
+" Miscellaneous
 "
 
 set autoindent
+" Automatically re-read file if a change was detected outside of vim
 set autoread
 set backspace=eol,start,indent
+" Yank and paste with the system clipboard
 set clipboard+=unnamedplus
 set cmdheight=1
 set encoding=utf-8
-set expandtab
+" Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:\ ,
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
+" Hides buffers instead of closing them
 set hidden
 set hlsearch
+" Ignore case when searching
 set ignorecase
 set incsearch
 set laststatus=0
 set lazyredraw
 set mouse=
-set nobackup
 set nofoldenable
+" Disable line numbers
 set nonumber
-set noruler
-set noshowcmd
-set noswapfile
 set nowb
+" Do not wrap long lines by default
 set nowrap
-set shiftwidth=2
 set showmatch
-set smartcase
 set smartindent
 set smarttab
-set softtabstop=2
+" Set preview window to appear at bottom
 set splitbelow
 set splitright
 set tabstop=2
 set whichwrap+=<,>,h,l
 set wildmenu
+
+"
+" Status Line
+"
+
+" Disable line/column number in status line
+set noruler
+" Don't dispay mode in command line
+set noshowmode
+" Don't show last command
+set noshowcmd
+
+"
+" TAB/Space settings
+"
+
+" Insert spaces when TAB is pressed.
+set expandtab
+" Change number of spaces that a <Tab> counts for during editing ops
+set softtabstop=2
+" Indentation amount for < and > commands.
+set shiftwidth=2
+
+"
+" Search
+"
+
+" Ignore case when searching
+set ignorecase
+" If the search string has an upper case letter in it, the search will be case sensitive
+set smartcase
+
+"
+" Backups
+"
+
+set nobackup
+set noswapfile
 
 "
 " Other
