@@ -15,8 +15,6 @@ Plug '/usr/local/opt/fzf'       " ┐ fzf is a general-purpose
 Plug 'junegunn/fzf.vim'         " ┘ command-line fuzzy finder.
 
 " Lint
-
-" Ale
 Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
 let g:ale_fix_on_save = 1       " ┘ Fix files when you save them.
 let g:ale_sign_warning = '→'
@@ -64,9 +62,16 @@ call plug#end()
 let g:mapleader = ','
 
 " Exploration
-map <leader>e :Explore<cr>
+map <leader>e :Vexplore<cr>
 let g:netrw_banner = 0          " Removing the banner.
 let g:netrw_liststyle = 3       " Directory view in netrw.
+let g:netrw_browse_split = 4    " Open in previous window
+let g:netrw_altv = 1
+let g:netrw_winsize = 25        " Window size
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 " fzf
 map <leader>f :Files<cr>
@@ -78,9 +83,11 @@ map <leader>b :Buffers<cr>
 " vim-commentary
 map <leader>c :Commentary<cr>
 
-" Fast write, quit, refresh (edit)
-map <leader>w :w!<cr>
+" Save
+map <leader>w :update<cr>
+" Quit
 map <leader>q :q<cr>
+" Refresh (edit)
 map <leader>r :e!<cr>
 
 " Windows navigation
