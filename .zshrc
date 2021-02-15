@@ -36,6 +36,9 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%} ✖"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✔"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #
 # Environment variables
 #
@@ -44,9 +47,6 @@ export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 
 export PATH="/usr/local/sbin:$PATH"
-
-# Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
 
 #
 # Aliases
