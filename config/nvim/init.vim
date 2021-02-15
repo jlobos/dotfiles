@@ -19,38 +19,37 @@ Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
 let g:ale_fix_on_save = 1       " ┘ Fix files when you save them.
 let g:ale_sign_warning = '→'
 let g:ale_sign_error = '→'
-let g:ale_fixers = {'javascript': ['prettier']}
-let g:ale_linters = {'javascript': ['xo']}
+let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+let g:ale_completion_enabled = 1
 
 " Wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 " Edit
 
-Plug 'jiangmiao/auto-pairs'     " Insert or delete brackets,
-                                " parens, quotes in pair.
+Plug 'jiangmiao/auto-pairs'       " Insert or delete brackets,
+                                  " parens, quotes in pair.
 
-Plug 'tpope/vim-commentary'     " Comment stuff out.
+Plug 'tpope/vim-commentary'       " Comment stuff out.
 
-Plug 'tpope/vim-surround'       " Mappings to easily delete, change
-                                " and add such surroundings in pairs.
+Plug 'tpope/vim-surround'         " Mappings to easily delete, change
+                                  " and add such surroundings in pairs.
 
 " Syntax
 
-Plug 'pangloss/vim-javascript'  " Javascript indentation and syntax support.
+Plug 'pangloss/vim-javascript'    " Javascript indentation and syntax support.
+Plug 'leafgarland/typescript-vim' " Typescript syntax
+Plug 'ap/vim-css-color'           " Preview colours in source code.
+Plug 'hail2u/vim-css3-syntax'     " CSS3 syntax
 
-Plug 'ap/vim-css-color'         " ┐ Preview colours in source code.
-Plug 'hail2u/vim-css3-syntax'   " ┘ CSS3 syntax.
+Plug 'fatih/vim-go'               " Go development plugin.
 
-Plug 'chr4/nginx.vim'           " NGINX syntax highlighting.
-
-Plug 'fatih/vim-go'             " Go development plugin.
-
-Plug 'udalov/kotlin-vim'        " Kotlin syntax.
+Plug 'udalov/kotlin-vim'          " Kotlin syntax.
 autocmd Filetype kotlin setlocal tabstop=4 shiftwidth=4
 autocmd FileType kotlin setlocal commentstring=//\ %s
-
-Plug 'mattn/emmet-vim'          " The essential toolkit for web-developers.
 
 call plug#end()
 
@@ -61,17 +60,13 @@ call plug#end()
 " Remap leader key to ,
 let g:mapleader = ','
 
+" Allow netrw to remove non-empty local directories
+let g:netrw_localrmdir="trash"
+
 " Exploration
-map <leader>e :Vexplore<cr>
+map <leader>e :Explore<cr>
 let g:netrw_banner = 0          " Removing the banner.
 let g:netrw_liststyle = 3       " Directory view in netrw.
-let g:netrw_browse_split = 4    " Open in previous window
-let g:netrw_altv = 1
-let g:netrw_winsize = 25        " Window size
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
 
 " fzf
 map <leader>f :Files<cr>
@@ -117,13 +112,17 @@ set termguicolors
 syntax on
 colorscheme dracula
 
-" Vertical Split bar styling
-hi VertSplit guibg=bg guifg=bg
-
 "
 " Miscellaneous
 "
 
+" Give more space for displaying messages.
+set cmdheight=2
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 set autoindent
 " Automatically re-read file if a change was detected outside of vim
 set autoread
@@ -199,6 +198,7 @@ set smartcase
 
 set nobackup
 set noswapfile
+set nowritebackup
 
 "
 " Other
