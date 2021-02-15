@@ -14,6 +14,9 @@ plugins=(
 
   # Type `git open` to open repo website
   git-open
+
+  # OSX plugin
+  osx
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -40,7 +43,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✔"
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 
-export PATH="/Users/j/Library/Python/2.7/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
@@ -50,31 +53,13 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 #
 
 alias ..='cd ..'
-alias c='clear'
+alias c='clear && history -c &> /dev/null'
 alias q='exit'
 alias reload='source ~/.zshrc'
 
 # Git
-
 alias g='git'
+alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
 
 # Neovim
-
 alias e='nvim'
-alias vim='nvim'
-alias vi='nvim'
-
-# Node.js
-
-alias n='node'
-
-# Docker
-
-alias d='docker'
-alias dc='docker-compose'
-alias dm='docker-machine'
-
-# Instant Edit
-
-alias vvv='nvim ~/.config/nvim/init.vim'
-alias zzz='nvim ~/.zshrc'
