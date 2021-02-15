@@ -36,3 +36,4 @@ set clipboard+=unnamedplus  " Compartir el portapales del sistema
 
 " Plugins
 set surround
+set ideajoin
