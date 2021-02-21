@@ -1,110 +1,118 @@
+" Remap leader key to ,
+let mapleader = ','
+let maplocalleader = ','
+
+" ============================================================================
+" Plugins
+" ============================================================================
+
 call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
-
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" Git
+" hyperfocus
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+  nnoremap <leader>ll :Limelight!!0.6<cr>
 
-Plug 'airblade/vim-gitgutter'   " ┐ Shows a git diff in the gutter.
-let g:gitgutter_map_keys = 0    " ┘ Disable all key mappings.
-
+"
 " Utils
+"
 
-Plug '/usr/local/opt/fzf'       " ┐ fzf is a general-purpose
-Plug 'junegunn/fzf.vim'         " ┘ command-line fuzzy finder.
+" Shows a git diff in the gutter
+Plug 'airblade/vim-gitgutter'
 
-" Lint
-Plug 'w0rp/ale'                 " ┐ Asynchronous linting/fixing.
-let g:ale_fix_on_save = 1       " ┘ Fix files when you save them.
-let g:ale_sign_warning = '→'
-let g:ale_sign_error = '→'
-let g:ale_fixers = {'javascript': ['eslint']}
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
-" Enable completion where available.
-" This setting must be set before ALE is loaded.
-let g:ale_completion_enabled = 1
+" git wrapper
+Plug 'tpope/vim-fugitive'
+  nnoremap <leader>ga :Gw<cr>
 
-" Wrapper for prettier
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" command-line fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+  nnoremap <leader>a :Ag<space>
+  nnoremap <leader>b :Buffers<cr>
+  nnoremap <leader>f :Files<cr>
+  nnoremap <leader>gf :GFiles<cr>
+  nnoremap <leader>gs :GFiles?<cr>
 
-" Edit
+" Make your Vim/Neovim as smart as VSCode
+" :CocInstall coc-json coc-tsserver coc-eslint
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'jiangmiao/auto-pairs'       " Insert or delete brackets,
-                                  " parens, quotes in pair.
+" wrapper for prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-Plug 'tpope/vim-commentary'       " Comment stuff out.
+" Insert or delete brackets, parens, quotes in pair
+Plug 'jiangmiao/auto-pairs'
 
-Plug 'tpope/vim-surround'         " Mappings to easily delete, change
-                                  " and add such surroundings in pairs.
+" Comment stuff out
+Plug 'tpope/vim-commentary'
+  nnoremap <leader>c :Commentary<cr>
 
+" Mappings to easily delete, change and add such surroundings in pairs
+Plug 'tpope/vim-surround'
+
+" Switch between single-line and multiline forms of code
+Plug 'AndrewRadev/splitjoin.vim'
+
+" Quick Google lookup directly from Vim
+Plug 'szw/vim-g'
+  nnoremap <leader>s :Google<space>
+
+"
 " Syntax
+"
 
-Plug 'pangloss/vim-javascript'    " Javascript indentation and syntax support.
-Plug 'leafgarland/typescript-vim' " Typescript syntax
-Plug 'ap/vim-css-color'           " Preview colours in source code.
-Plug 'hail2u/vim-css3-syntax'     " CSS3 syntax
+" Javascript indentation and syntax support
+Plug 'pangloss/vim-javascript'
 
-Plug 'fatih/vim-go'               " Go development plugin.
+" Typescript syntax
+Plug 'leafgarland/typescript-vim'
 
-Plug 'udalov/kotlin-vim'          " Kotlin syntax.
-autocmd Filetype kotlin setlocal tabstop=4 shiftwidth=4
-autocmd FileType kotlin setlocal commentstring=//\ %s
+" Preview colours in source code
+Plug 'ap/vim-css-color'
+
+" CSS3 syntax
+Plug 'hail2u/vim-css3-syntax'
+
+" Go development plugin
+Plug 'fatih/vim-go'
+
+" Kotlin syntax
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
-"
+" ============================================================================
 " Maps
-"
+" ============================================================================
 
-" Remap leader key to ,
-let g:mapleader = ','
-
-" Allow netrw to remove non-empty local directories
-let g:netrw_localrmdir="trash"
+" Save, Quit and Refresh (edit)
+nnoremap <leader>w :update<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>r :e!<cr>
 
 " Exploration
-map <leader>e :Explore<cr>
-let g:netrw_banner = 0          " Removing the banner.
-let g:netrw_liststyle = 3       " Directory view in netrw.
-
-" fzf
-map <leader>f :Files<cr>
-" ag (the_silver_searcher) search result
-map <leader>a :Ag<space>
-" Open buffers
-map <leader>b :Buffers<cr>
-
-" vim-commentary
-map <leader>c :Commentary<cr>
-
-" Save
-map <leader>w :update<cr>
-" Quit
-map <leader>q :q<cr>
-" Refresh (edit)
-map <leader>r :e!<cr>
+nnoremap <leader>e :Explore<cr>
+  let g:netrw_banner = 0          " Removing the banner
+  let g:netrw_liststyle = 3       " Directory view in netrw
+  let g:netrw_localrmdir="trash"  " Allow netrw to remove non-empty local directories
 
 " Windows navigation
-map <leader>j <C-W>j
-map <leader>k <C-W>k
-map <leader>l <C-W>l
-map <leader>h <C-W>h
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>l <C-W>l
+nnoremap <leader>h <C-W>h
 
 " Tab
-map <leader>t :tabnew<cr>
+nnoremap <leader>t :tabnew<cr>
 
-" Quickly edit/reload this configuration file
-nnoremap <leader>v :source $MYVIMRC<cr>
+" qq to record, Q to replay
+nnoremap Q @q
 
-" Terminal
-map <leader>s :terminal<cr>
-" To map <Esc> to exit terminal-mode
-tnoremap <Esc> <C-\><C-n>
-
-"
+" ============================================================================
 " UI
-"
+" ============================================================================
 
 " Enable true color support
 set termguicolors
@@ -112,11 +120,11 @@ set termguicolors
 syntax on
 colorscheme dracula
 
-"
+" ============================================================================
 " Miscellaneous
-"
+" ============================================================================
 
-" Give more space for displaying messages.
+" Give more space for displaying messages
 set cmdheight=2
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -207,9 +215,6 @@ set nowritebackup
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 autocmd FileType netrw setl bufhidden=delete
-
-" Filetype detect for .babelrc
-autocmd BufRead .babelrc set filetype=json
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
