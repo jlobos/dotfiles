@@ -59,6 +59,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'szw/vim-g'
   nnoremap <leader>s :Google<space>
 
+Plug 'vim-test/vim-test'
+  nnoremap <leader>t :TestNearest<cr>
+
 "
 " Syntax
 "
@@ -103,9 +106,6 @@ nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
 nnoremap <leader>h <C-W>h
-
-" Tab
-nnoremap <leader>t :tabnew<cr>
 
 " qq to record, Q to replay
 nnoremap Q @q
