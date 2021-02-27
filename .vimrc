@@ -116,9 +116,11 @@ nnoremap Q @q
 
 " Enable true color support
 set termguicolors
-
+" Syntax highlighting
 syntax on
+
 colorscheme dracula
+  hi Comment gui=italic guifg=#6272A4
 
 " ============================================================================
 " Miscellaneous
