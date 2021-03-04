@@ -10,14 +10,15 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
 Plug 'dracula/vim', { 'as': 'dracula' }
-
-" hyperfocus
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
-  nnoremap <leader>ll :Limelight!!0.6<cr>
+Plug 'arzg/vim-colors-xcode'
 
 "
 " Utils
 "
+
+" hyperfocus
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+  nnoremap <leader>ll :Limelight!!0.6<cr>
 
 " Shows a git diff in the gutter
 Plug 'airblade/vim-gitgutter'
@@ -36,7 +37,6 @@ Plug 'junegunn/fzf.vim'
   nnoremap <leader>gs :GFiles?<cr>
 
 " Make your Vim/Neovim as smart as VSCode
-" :CocInstall coc-json coc-tsserver coc-eslint
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " wrapper for prettier
@@ -70,7 +70,7 @@ Plug 'vim-test/vim-test'
 Plug 'pangloss/vim-javascript'
 
 " Typescript syntax
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Preview colours in source code
 Plug 'ap/vim-css-color'
@@ -119,8 +119,11 @@ set termguicolors
 " Syntax highlighting
 syntax on
 
-colorscheme dracula
-  hi Comment gui=italic guifg=#6272A4
+" colorscheme dracula
+  " hi Comment gui=italic guifg=#6272A4
+
+colorscheme xcodedark
+  hi Comment cterm=italic gui=italic
 
 " ============================================================================
 " Miscellaneous
