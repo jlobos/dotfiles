@@ -84,6 +84,9 @@ Plug 'fatih/vim-go'
 " Kotlin syntax
 Plug 'udalov/kotlin-vim'
 
+" Swift syntax and indent files
+Plug 'keith/swift.vim'
+
 call plug#end()
 
 " ============================================================================
