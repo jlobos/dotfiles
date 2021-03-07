@@ -87,6 +87,13 @@ Plug 'udalov/kotlin-vim'
 " Swift syntax and indent files
 Plug 'keith/swift.vim'
 
+" Markdown
+Plug 'godlygeek/tabular', {'for': 'markdown'}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 " ============================================================================
