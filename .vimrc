@@ -139,55 +139,37 @@ colorscheme xcodedark
 " Miscellaneous
 " ============================================================================
 
-" Give more space for displaying messages
-set cmdheight=2
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-set autoindent
 " Automatically re-read file if a change was detected outside of vim
 set autoread
+" Make backspace work as you would expect
 set backspace=eol,start,indent
 " Yank and paste with the system clipboard
 set clipboard+=unnamedplus
-set cmdheight=1
-set encoding=utf-8
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:\ ,
-set foldlevel=2
-set foldmethod=indent
-set foldnestmax=10
 " Hides buffers instead of closing them
 set hidden
-set hlsearch
-" Ignore case when searching
-set ignorecase
-set incsearch
-set laststatus=0
+" Only redraw when necessary
 set lazyredraw
+" Disable mouse
 set mouse=
-set nofoldenable
-" Disable line numbers
-set nonumber
-set nowb
 " Do not wrap long lines by default
 set nowrap
+" When a bracket is inserted, briefly jump to the matching one
 set showmatch
-set smartindent
-set smarttab
-" Set preview window to appear at bottom
-set splitbelow
-set splitright
-set tabstop=2
 set whichwrap+=<,>,h,l
-set wildmenu
+
+" Open new windows below the current window
+set splitbelow
+" Open new windows right of current window
+set splitright
 
 "
 " Status Line
 "
 
+" Don't show statusline
+set laststatus=0
 " Disable line/column number in status line
 set noruler
 " Don't dispay mode in command line
@@ -199,17 +181,25 @@ set noshowcmd
 " TAB/Space settings
 "
 
-" Insert spaces when TAB is pressed.
+set smartindent
+set smarttab
+" Indent according to previous line
+set autoindent
+" Insert spaces when TAB is pressed
 set expandtab
 " Change number of spaces that a <Tab> counts for during editing ops
 set softtabstop=2
-" Indentation amount for < and > commands.
+" Indentation amount for < and > commands
 set shiftwidth=2
 
 "
 " Search
 "
 
+" Highlight while searching with / or ?
+set incsearch
+" Keep matches highlighted
+set hlsearch
 " Ignore case when searching
 set ignorecase
 " If the search string has an upper case letter in it, the search will be case sensitive
