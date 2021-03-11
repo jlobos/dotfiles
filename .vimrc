@@ -79,7 +79,7 @@ Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 
 " Go development plugin
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Kotlin syntax
 Plug 'udalov/kotlin-vim'
