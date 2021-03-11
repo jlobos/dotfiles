@@ -5,7 +5,8 @@
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
-export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 plugins=(
   git
