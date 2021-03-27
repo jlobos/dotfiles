@@ -26,18 +26,15 @@ Plug 'airblade/vim-gitgutter'
 " git wrapper
 Plug 'tpope/vim-fugitive'
   nnoremap <leader>ga :Gw<cr>
+  nnoremap <leader>gd :Gdiff<cr>
 
 " command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
   nnoremap <leader>a :Ag<space>
   nnoremap <leader>b :Buffers<cr>
-  nnoremap <leader>f :Files<cr>
-  nnoremap <leader>gf :GFiles<cr>
+  nnoremap <leader>f :GFiles<cr>
   nnoremap <leader>gs :GFiles?<cr>
-
-" Make your Vim/Neovim as smart as VSCode
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
