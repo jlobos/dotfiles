@@ -27,6 +27,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
   nnoremap <leader>ga :Gw<cr>
   nnoremap <leader>gd :Gdiff<cr>
+  nnoremap <leader>gc :G commit -v -q<cr>
 
 " command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
