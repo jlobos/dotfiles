@@ -16,6 +16,9 @@ Plug 'arzg/vim-colors-xcode'
 " Utils
 "
 
+" interactive scratchpad
+Plug 'metakirby5/codi.vim'
+
 " hyperfocus
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
   nnoremap <leader>ll :Limelight!!0.6<cr>
