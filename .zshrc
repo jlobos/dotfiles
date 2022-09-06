@@ -35,3 +35,15 @@ alias ..='cd ..'
 alias e='nvim'
 alias q='exit'
 alias reload='source ~/.zshrc'
+
+#
+# Functions
+#
+
+function_update () {
+  # Update brew
+  brew upgrade
+
+  # Update plugins of nvim
+  nvim +PlugUpdate +qall
+}

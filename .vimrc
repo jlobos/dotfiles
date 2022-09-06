@@ -43,6 +43,11 @@ Plug 'junegunn/fzf.vim'
 " wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+Plug 'mattn/emmet-vim'
+  let g:user_emmet_leader_key=','
+  let g:user_emmet_install_global = 0
+  autocmd FileType html,css,javascript EmmetInstall
+
 " Insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
 
@@ -107,7 +112,7 @@ Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 
 " Go development plugin
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go'
 
 " Kotlin syntax
 Plug 'udalov/kotlin-vim'
@@ -177,11 +182,11 @@ set termguicolors
 " Syntax highlighting
 syntax on
 
-" colorscheme dracula
-  " hi Comment gui=italic guifg=#6272A4
+colorscheme dracula
+  hi Comment gui=italic guifg=#6272A4
 
-colorscheme xcodedark
-  hi Comment cterm=italic gui=italic
+" colorscheme xcodedark
+"   hi Comment cterm=italic gui=italic
 
 " ============================================================================
 " Miscellaneous
