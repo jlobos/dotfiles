@@ -5,8 +5,8 @@
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/.cargo/bin"
+# export PATH="$PATH:/usr/local/sbin"
+# export PATH="$PATH:$HOME/.cargo/bin"
 
 plugins=(
   git
@@ -15,16 +15,11 @@ plugins=(
 
   # Type `git open` to open repo website
   git-open
-
-  # OSX plugin
-  osx
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.fzf.zsh
-source /usr/local/etc/profile.d/z.sh
 
-# prompt
+# PROMPT
 eval "$(starship init zsh)"
 
 #
