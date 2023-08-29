@@ -39,6 +39,9 @@ function_update () {
   # Update brew
   brew upgrade
 
+  # Update oh-my-zsh
+  omz update
+
   # Update plugins of nvim
   nvim +PlugUpdate +qall
 }

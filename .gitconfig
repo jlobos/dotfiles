@@ -1,6 +1,6 @@
 [user]
   email = jlobos@outlook.cl
-  name = Jesús Lobos
+  name = lobito
 
 [github]
   user = jlobos
@@ -25,6 +25,6 @@
   cm = commit --message
   ca = commit --amend --reuse-message=HEAD
 
-  # https://github.com/GitAlias/gitalias/blob/master/gitalias.txt
+# https://github.com/GitAlias/gitalias/blob/main/gitalias.txt
 [init]
-	defaultBranch = main
+  defaultBranch = main

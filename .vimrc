@@ -130,19 +130,6 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " ============================================================================
-" Lua
-" ============================================================================
-
-lua << EOF
-local nvim_lsp = require('lspconfig')
-
-local servers = { "pyright", "tsserver" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
-EOF
-
-" ============================================================================
 " Maps
 " ============================================================================
 
@@ -183,10 +170,10 @@ set termguicolors
 syntax on
 
 colorscheme dracula
-  hi Comment gui=italic guifg=#6272A4
+hi Comment gui=italic guifg=#6272A4
 
-" colorscheme xcodedark
-"   hi Comment cterm=italic gui=italic
+" colorscheme xcode
+" hi Comment cterm=italic gui=italic
 
 " ============================================================================
 " Miscellaneous
@@ -285,3 +272,16 @@ augroup line_return
         \     execute 'normal! g`"zvzz' |
         \ endif
   augroup END
+
+" ============================================================================
+" Lua
+" ============================================================================
+
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+local servers = { "pyright", "tsserver" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+EOF
