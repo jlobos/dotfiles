@@ -30,6 +30,7 @@ alias ..='cd ..'
 alias e='nvim'
 alias q='exit'
 alias reload='source ~/.zshrc'
+alias gist='gh gist'
 
 #
 # Functions
