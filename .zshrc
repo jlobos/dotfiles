@@ -19,6 +19,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# z - jump around
+. /usr/local/etc/profile.d/z.sh
+
 # PROMPT
 eval "$(starship init zsh)"
 
