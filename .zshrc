@@ -12,10 +12,13 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
+  tmux
 
   # Type `git open` to open repo website
   git-open
 )
+
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
