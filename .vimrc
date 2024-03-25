@@ -126,162 +126,21 @@ Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
 " Rust
 Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 call plug#end()
 
 " ============================================================================
-" Maps
+" LUA
 " ============================================================================
 
-" LSP config
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-
-" Save, Quit and Refresh (edit)
-nnoremap <leader>w :update<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>r :e!<cr>
-
-" Exploration
-nnoremap <leader>e :Explore<cr>
-  let g:netrw_banner = 0          " Removing the banner
-  let g:netrw_liststyle = 3       " Directory view in netrw
-  let g:netrw_localrmdir="trash"  " Allow netrw to remove non-empty local directories
-
-" Windows navigation
-nnoremap <leader>j <C-W>j
-nnoremap <leader>k <C-W>k
-nnoremap <leader>l <C-W>l
-nnoremap <leader>h <C-W>h
-
-" qq to record, Q to replay
-nnoremap Q @q
-
-" ============================================================================
-" UI
-" ============================================================================
-
-" Enable true color support
-set termguicolors
-" Syntax highlighting
-syntax on
-
-colorscheme dracula
-hi Comment gui=italic guifg=#6272A4
-
-" colorscheme xcode
-" hi Comment cterm=italic gui=italic
-
-" ============================================================================
-" Miscellaneous
-" ============================================================================
-
-" Automatically re-read file if a change was detected outside of vim
-set autoread
-" Make backspace work as you would expect
-set backspace=eol,start,indent
-" Yank and paste with the system clipboard
-set clipboard+=unnamedplus
-" Change vertical split character to be a space (essentially hide it)
-set fillchars+=vert:\ ,
-" Hides buffers instead of closing them
-set hidden
-" Only redraw when necessary
-set lazyredraw
-" Disable mouse
-set mouse=
-" Do not wrap long lines by default
-set nowrap
-" When a bracket is inserted, briefly jump to the matching one
-set showmatch
-set whichwrap+=<,>,h,l
-
-" Open new windows below the current window
-set splitbelow
-" Open new windows right of current window
-set splitright
-
-"
-" Status Line
-"
-
-" Don't show statusline
-set laststatus=0
-" Disable line/column number in status line
-set noruler
-" Don't dispay mode in command line
-set noshowmode
-" Don't show last command
-set noshowcmd
-
-"
-" TAB/Space settings
-"
-
-set smartindent
-set smarttab
-" Indent according to previous line
-set autoindent
-" Insert spaces when TAB is pressed
-set expandtab
-" Change number of spaces that a <Tab> counts for during editing ops
-set softtabstop=2
-" Indentation amount for < and > commands
-set shiftwidth=2
-
-"
-" Search
-"
-
-" Highlight while searching with / or ?
-set incsearch
-" Keep matches highlighted
-set hlsearch
-" Ignore case when searching
-set ignorecase
-" If the search string has an upper case letter in it, the search will be case sensitive
-set smartcase
-
-"
-" Backups
-"
-
-set nobackup
-set noswapfile
-set nowritebackup
-
-"
-" Other
-"
-
-" Per default, netrw leaves unmodified buffers open. This autocommand
-" deletes netrw's buffer once it's hidden (using ':q', for example)
-autocmd FileType netrw setl bufhidden=delete
-
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Make sure Vim returns to the same line when you reopen a file.
-augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
-  augroup END
-
-" ============================================================================
-" Lua
-" ============================================================================
+lua require('init')
 
 lua << EOF
-local nvim_lsp = require('lspconfig')
+-- local nvim_lsp = require('lspconfig')
 
-local servers = { "pyright", "tsserver" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
+-- local servers = { "pyright", "tsserver" }
+-- for _, lsp in ipairs(servers) do
+--  nvim_lsp[lsp].setup { on_attach = on_attach }
+-- end
 EOF
