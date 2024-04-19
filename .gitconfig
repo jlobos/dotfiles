@@ -9,8 +9,10 @@
   ff = only
 
 [alias]
-  # s = status -s
-  # nb = !git checkout -b $(random-word)-$(random-word)
+  # Create a new branch with a random name
+  # https://github.com/sindresorhus/random-word-cli
+  nb = !git checkout -b $(random-word)-$(random-word)
+
   # Amend the currently staged files to the latest commit
   # amend = commit --amend --reuse-message=HEAD
   # Create new brach and switch to it
