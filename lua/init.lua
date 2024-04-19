@@ -12,14 +12,15 @@ vim.cmd('syntax on')
 vim.cmd [[
   colorscheme dracula
   hi Comment gui=italic guifg=#6272A4
+  hi FloatBorder guibg=none guifg=#44475a
+  hi NormalFloat guibg=none
 ]]
-
--- colorscheme xcode
--- hi Comment cterm=italic gui=italic
 
 -- ============================================================================
 -- Maps
 -- ============================================================================
+-- Alternar entre plegar y desplegar un fold en la línea actual
+vim.api.nvim_set_keymap('n', '<Space>', ':normal! za<CR>', { noremap = true, silent = true })
 
 -- Save, Quit and Refresh (edit)
 vim.api.nvim_set_keymap('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
@@ -64,6 +65,9 @@ vim.opt.wrap = false
 vim.opt.showmatch = true
 --
 vim.opt.whichwrap:append('<', '>', 'h', 'l')
+-- Folding
+vim.opt.foldmethod = 'syntax'
+vim.opt.foldenable = false
 
 
 -- Open new windows below the current window

@@ -24,7 +24,8 @@ Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
   nnoremap <leader>ll :Limelight!!0.6<cr>
 
 " Shows a git diff in the gutter
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 
 " git wrapper
 Plug 'tpope/vim-fugitive'
@@ -37,11 +38,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
   nnoremap <leader>a :Ag<space>
   nnoremap <leader>b :Buffers<cr>
-  nnoremap <leader>f :GFiles<cr>
-  nnoremap <leader>gs :GFiles?<cr>
+  nnoremap <leader>f :Files<cr>
+  nnoremap <leader>gf :GFiles?<cr>
 
 " wrapper for prettier
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' }
 
 Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
@@ -53,7 +54,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " Comment stuff out
 Plug 'tpope/vim-commentary'
-  nnoremap <leader>c :Commentary<cr>
 
 " Mappings to easily delete, change and add such surroundings in pairs
 Plug 'tpope/vim-surround'
@@ -68,32 +68,26 @@ Plug 'szw/vim-g'
 Plug 'vim-test/vim-test'
   nnoremap <leader>t :TestNearest<cr>
 
+" Copilot
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+
 " Neovim lenguage server client
 Plug 'neovim/nvim-lspconfig'
+" Completion
+Plug 'hrsh7th/nvim-cmp'
+" Completion sources
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'zbirenbaum/copilot-cmp'
+" Pictograms for neovim lsp completion items
+Plug 'onsails/lspkind.nvim'
 
-" Auto completion
-Plug 'hrsh7th/nvim-compe'
-  set completeopt=menuone,noselect
-  let g:compe = {}
-  let g:compe.enabled = v:true
-  let g:compe.autocomplete = v:true
-  let g:compe.debug = v:false
-  let g:compe.min_length = 1
-  let g:compe.preselect = 'enable'
-  let g:compe.throttle_time = 80
-  let g:compe.source_timeout = 200
-  let g:compe.incomplete_delay = 400
-  let g:compe.max_abbr_width = 100
-  let g:compe.max_kind_width = 100
-  let g:compe.max_menu_width = 100
-  let g:compe.documentation = v:true
-  let g:compe.source = {}
-  let g:compe.source.path = v:true
-  let g:compe.source.buffer = v:true
-  let g:compe.source.calc = v:true
-  let g:compe.source.nvim_lsp = v:true
-  let g:compe.source.nvim_lua = v:true
-  let g:compe.source.vsnip = v:true
+" Snippet Engine for Neovim written in Lua
+Plug 'L3MON4D3/LuaSnip'
 
 "
 " Syntax
@@ -135,12 +129,4 @@ call plug#end()
 " ============================================================================
 
 lua require('init')
-
-lua << EOF
--- local nvim_lsp = require('lspconfig')
-
--- local servers = { "pyright", "tsserver" }
--- for _, lsp in ipairs(servers) do
---  nvim_lsp[lsp].setup { on_attach = on_attach }
--- end
-EOF
+lua require('setup')
