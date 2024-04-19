@@ -5,6 +5,9 @@
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 plugins=(
   git
@@ -29,6 +32,8 @@ alias e='nvim'
 alias q='exit'
 alias reload='source ~/.zshrc'
 alias gist='gh gist'
+alias python='python3'
+alias explain='gh copilot explain'
 
 # PROMPT
 eval "$(starship init zsh)"
@@ -36,6 +41,9 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 #
 # Functions
@@ -53,6 +61,9 @@ function_update () {
 
   # Update oh-my-zsh
   omz update
+
+  # Update npm packages
+  npm update -g
 
   # Update plugins of nvim
   nvim +PlugUpdate +qall
