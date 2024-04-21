@@ -72,6 +72,7 @@ Plug 'vim-test/vim-test'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+  nnoremap <leader>c :CopilotChatToggle<cr>
 
 " Neovim lenguage server client
 Plug 'neovim/nvim-lspconfig'
