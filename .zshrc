@@ -35,6 +35,7 @@ alias gist='gh gist'
 alias python='python3'
 alias explain='gh copilot explain'
 alias json='fx'
+alias cd='z' # zoxide
 
 # PROMPT
 eval "$(starship init zsh)"
