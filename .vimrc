@@ -24,7 +24,6 @@ Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
   nnoremap <leader>ll :Limelight!!0.6<cr>
 
 " Shows a git diff in the gutter
-" Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 
 " git wrapper
@@ -40,6 +39,8 @@ Plug 'junegunn/fzf.vim'
   nnoremap <leader>b :Buffers<cr>
   nnoremap <leader>f :Files<cr>
   nnoremap <leader>gf :GFiles?<cr>
+
+Plug 'sainnhe/tmux-fzf'
 
 " wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' }
