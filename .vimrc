@@ -40,8 +40,6 @@ Plug 'junegunn/fzf.vim'
   nnoremap <leader>f :Files<cr>
   nnoremap <leader>gf :GFiles?<cr>
 
-Plug 'sainnhe/tmux-fzf'
-
 " wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' }
 
