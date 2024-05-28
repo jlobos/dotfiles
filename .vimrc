@@ -16,6 +16,16 @@ Plug 'arzg/vim-colors-xcode'
 " Utils
 "
 
+" vimwiki
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_listsyms = ' ✗  ✓'
+let g:vimwiki_global_ext = 0
+" Toggle list item, d of done
+nnoremap <leader>d <Plug>VimwikiToggleListItem
+" avoid overwriting markdown filetype by vimwiki
+autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+
 " interactive scratchpad
 Plug 'metakirby5/codi.vim'
 
@@ -42,6 +52,8 @@ Plug 'junegunn/fzf.vim'
 
 " wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' }
+" Ejecuta Prettier al guardar
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
