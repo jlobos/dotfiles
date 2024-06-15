@@ -25,13 +25,6 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':update<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>r', ':e!<CR>', { noremap = true, silent = true })
 
--- Exploration
-vim.api.nvim_set_keymap('n', '<leader>e', ':Explore<CR>', { noremap = true, silent = true })
-
-vim.g.netrw_banner = 0            -- Removing the banner
-vim.g.netrw_liststyle = 3         -- Directory view in netrw
-vim.g.netrw_localrmdir = "trash"  -- Allow netrw to remove non-empty local directories
-
 -- Windows navigation
 vim.api.nvim_set_keymap('n', '<leader>j', '<C-W>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>k', '<C-W>k', { noremap = true, silent = true })

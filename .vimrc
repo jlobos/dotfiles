@@ -86,6 +86,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
   nnoremap <leader>c :CopilotChatToggle<cr>
 
+" Explore
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+nnoremap <leader>e :NvimTreeOpen<CR>
+
 "
 " Neovim lenguage server client
 "

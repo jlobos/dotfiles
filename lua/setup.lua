@@ -5,8 +5,22 @@ local copilot_cmp = require'copilot_cmp'
 local gitsigns = require'gitsigns'
 local lspconfig = require'lspconfig'
 local lspkind = require'lspkind'
+local nvim_tree = require("nvim-tree")
 
 gitsigns.setup {}
+nvim_tree.setup {
+  disable_netrw = true,
+  view = {
+    float = { enable = true },
+  },
+  renderer = {
+    icons = {
+      glyphs = {
+        git = { untracked = "u" }
+      }
+    }
+  }
+}
 
 --
 -- LSP servers
