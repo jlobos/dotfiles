@@ -8,9 +8,12 @@ export LANG='en_US.UTF-8'
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# fzf
+export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
 
 plugins=(
   git
+  fzf-tab
   zsh-syntax-highlighting
   zsh-autosuggestions
   tmux
@@ -30,12 +33,13 @@ source $ZSH/oh-my-zsh.sh
 alias ..='cd ..'
 alias e='nvim'
 alias q='exit'
-alias reload='source ~/.zshrc'
+alias reload='source ~/.zshrc && tmux source ~/.tmux.conf'
 alias gist='gh gist'
 alias python='python3'
 alias explain='gh copilot explain'
 alias json='fx'
 alias cd='z' # zoxide
+alias paste='pbpaste'
 
 # PROMPT
 eval "$(starship init zsh)"

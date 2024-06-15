@@ -11,8 +11,14 @@ gitsigns.setup {}
 --
 -- LSP servers
 --
+
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
+-- for Swift
+lspconfig.sourcekit.setup {
+  filetypes = { 'swift' },
+}
+-- for Lua
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
@@ -23,6 +29,27 @@ lspconfig.lua_ls.setup {
     },
   },
 }
+
+-- K muestra informacion
+-- gd salta a definición
+-- gD salta a declaración
+-- gi muestra implementaciones
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(event)
+    local opts = { buffer = event.buf }
+    local map = vim.keymap.set
+
+    map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+    map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+    map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+  end
+})
+
+-- Agregar bordes a ventana de información K
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  { border = 'rounded' }
+)
 
 -- Copilot settings
 copilot.setup {

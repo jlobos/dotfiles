@@ -20,11 +20,11 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_listsyms = ' ✗  ✓'
-let g:vimwiki_global_ext = 0
+let g:vimwiki_folding = 'expr'
 " Toggle list item, d of done
 nnoremap <leader>d <Plug>VimwikiToggleListItem
-" avoid overwriting markdown filetype by vimwiki
-autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+" Alias for table
+command -nargs=* Table VimwikiTable <args>
 
 " interactive scratchpad
 Plug 'metakirby5/codi.vim'
@@ -65,6 +65,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " Comment stuff out
 Plug 'tpope/vim-commentary'
+autocmd FileType swift setlocal commentstring=//\ %s
 
 " Mappings to easily delete, change and add such surroundings in pairs
 Plug 'tpope/vim-surround'
@@ -85,8 +86,14 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
   nnoremap <leader>c :CopilotChatToggle<cr>
 
+"
 " Neovim lenguage server client
+"
+" LSP facilitates features like go-to-definition, find references, hover,
+" completion, rename, format, refactor, etc.
+"
 Plug 'neovim/nvim-lspconfig'
+
 " Completion
 Plug 'hrsh7th/nvim-cmp'
 " Completion sources
@@ -123,12 +130,17 @@ Plug 'fatih/vim-go'
 " Kotlin syntax
 Plug 'udalov/kotlin-vim'
 
-" Swift syntax and indent files
-Plug 'keith/swift.vim'
+" Swift
+Plug 'apple/swift', { 'for': 'swift', 'rtp': 'utils/vim' }
+autocmd FileType swift setlocal foldmethod=indent
 
-" Markdown
-Plug 'godlygeek/tabular', {'for': 'markdown'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+function! SwiftFormat()
+  let l:save_cursor = getpos(".")
+  %!swift-format
+  call setpos('.', l:save_cursor)
+endfunction
+
+autocmd BufWritePre *.swift :call SwiftFormat()
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -142,3 +154,5 @@ call plug#end()
 
 lua require('init')
 lua require('setup')
+" Funciones de utilidad personal
+lua require('scripts')

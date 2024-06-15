@@ -19,8 +19,6 @@ vim.cmd [[
 -- ============================================================================
 -- Maps
 -- ============================================================================
--- Alternar entre plegar y desplegar un fold en la línea actual
-vim.api.nvim_set_keymap('n', '<Space>', ':normal! za<CR>', { noremap = true, silent = true })
 
 -- Save, Quit and Refresh (edit)
 vim.api.nvim_set_keymap('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
@@ -39,9 +37,6 @@ vim.api.nvim_set_keymap('n', '<leader>j', '<C-W>j', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<leader>k', '<C-W>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', '<C-W>l', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h', '<C-W>h', { noremap = true, silent = true })
-
--- qq to record, Q to replay
-vim.api.nvim_set_keymap('n', 'Q', '@q', { noremap = true, silent = true })
 
 -- ============================================================================
 -- Miscellaneous
@@ -63,11 +58,13 @@ vim.opt.lazyredraw = true
 vim.opt.wrap = false
 -- When a bracket is inserted, briefly jump to the matching one
 vim.opt.showmatch = true
---
-vim.opt.whichwrap:append('<', '>', 'h', 'l')
+-- Permite moverse a la siguiente/anterior línea con <, >, h, l
+vim.opt.whichwrap:append("<,>,h,l")
 -- Folding
 vim.opt.foldmethod = 'syntax'
 vim.opt.foldenable = false
+-- Establece el ancho máximo de línea a 80 caracteres.
+vim.opt.textwidth = 80
 
 
 -- Open new windows below the current window
