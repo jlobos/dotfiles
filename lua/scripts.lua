@@ -30,6 +30,25 @@ _G.archive_current_line = function()
   vim.api.nvim_buf_set_lines(0, current_line-1, current_line, false, {})
 end
 
--- Registrar estas funciones como un comando de Vim
+local function executeAppleScriptCommand (...)
+  local args = {...}
+  local command = "osascript -e '" .. table.concat(args, "' -e '") .. "'"
+
+  os.execute(command)
+end
+
+_G.xcodeRun = function ()
+  executeAppleScriptCommand(
+    'activate application "Xcode"',
+    'tell application "System Events" to tell process "Xcode" to keystroke "r" using command down'
+  )
+end
+
+--
+-- Comandos
+--
+
 vim.cmd('command! InsertDate lua _G.insert_date()')
 vim.cmd('command! ToArchive lua _G.archive_current_line()')
+-- Xcode Run
+vim.cmd('command! Run lua _G.xcodeRun()')
