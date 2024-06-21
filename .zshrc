@@ -73,4 +73,7 @@ function_update () {
 
   # Update plugins of nvim
   nvim +PlugUpdate +qall
+
+  # Update plugins of tmux
+  ~/.tmux/plugins/tpm/bin/update_plugins all
 }
