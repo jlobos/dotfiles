@@ -20,9 +20,7 @@ vim.cmd [[
 -- Maps
 -- ============================================================================
 
--- Save, Quit and Refresh (edit)
-vim.api.nvim_set_keymap('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
+-- Refresh (edit)
 vim.api.nvim_set_keymap('n', '<leader>r', ':e!<CR>', { noremap = true, silent = true })
 
 -- Windows navigation
