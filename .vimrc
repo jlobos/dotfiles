@@ -65,7 +65,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " Comment stuff out
 Plug 'tpope/vim-commentary'
-autocmd FileType swift setlocal commentstring=//\ %s
+autocmd FileType swift,arduino setlocal commentstring=//\ %s
 
 " Mappings to easily delete, change and add such surroundings in pairs
 Plug 'tpope/vim-surround'
