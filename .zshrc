@@ -6,10 +6,13 @@ export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export BUN_PATH="$HOME/.bun/bin"
+# go
+export GO_PATH="/usr/local/go/bin"
 # fzf
 export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
+
+export PATH="$PATH:$BUN_PATH:$GO_PATH"
 
 plugins=(
   git
