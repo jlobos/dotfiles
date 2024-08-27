@@ -26,6 +26,13 @@ nvim_tree.setup {
 -- LSP servers
 --
 
+lspconfig.arduino_language_server.setup {
+  cmd = {
+    "arduino-language-server",
+    "-cli-config", "$HOME/Library/Arduino15/arduino-cli.yaml",
+  }
+}
+
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 -- for Swift

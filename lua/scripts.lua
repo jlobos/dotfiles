@@ -1,4 +1,5 @@
 local os = require('os')
+local chat = require('CopilotChat')
 
 _G.insert_date = function()
     local date = os.date('*t')
@@ -42,6 +43,18 @@ _G.xcodeRun = function ()
     'activate application "Xcode"',
     'tell application "System Events" to tell process "Xcode" to keystroke "r" using command down'
   )
+end
+
+-- Chat with Copilot directly from Neovim executing the
+-- following command:
+-- nvim --cmd 'autocmd VimEnter * lua _G.chat()'
+_G.chat = function()
+  chat.open({
+    window = {
+      layout = 'replace',
+      title = 'Copilot',
+    },
+  })
 end
 
 --

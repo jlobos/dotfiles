@@ -8,11 +8,11 @@ export LANG='en_US.UTF-8'
 # bun
 export BUN_PATH="$HOME/.bun/bin"
 # go
-export GO_PATH="/usr/local/go/bin"
+export GO_PATH="$HOME/go"
 # fzf
 export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
 
-export PATH="$PATH:$BUN_PATH:$GO_PATH"
+export PATH="$PATH:$BUN_PATH:$GO_PATH/bin"
 
 plugins=(
   git
@@ -43,6 +43,7 @@ alias explain='gh copilot explain'
 alias json='fx'
 alias cd='z' # zoxide
 alias paste='pbpaste'
+alias copilot="nvim --cmd 'autocmd VimEnter * lua _G.chat()'"
 
 # PROMPT
 eval "$(starship init zsh)"
