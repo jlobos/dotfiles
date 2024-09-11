@@ -44,6 +44,7 @@ alias json='fx'
 alias cd='z' # zoxide
 alias paste='pbpaste'
 alias copilot="nvim --cmd 'autocmd VimEnter * lua _G.chat()'"
+alias copy='pbcopy'
 
 # PROMPT
 eval "$(starship init zsh)"

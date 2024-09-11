@@ -34,7 +34,7 @@ lspconfig.arduino_language_server.setup {
 }
 
 lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup {}
 -- for Swift
 lspconfig.sourcekit.setup {
   filetypes = { 'swift' },
