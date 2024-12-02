@@ -14,6 +14,9 @@ export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
 
 export PATH="$PATH:$BUN_PATH:$GO_PATH/bin"
 
+# node
+export NODE_OPTIONS='--disable-warning=ExperimentalWarning'
+
 plugins=(
   git
   fzf-tab
@@ -46,7 +49,7 @@ alias paste='pbpaste'
 alias copy='pbcopy'
 # ia powered
 alias copilot="nvim --cmd 'autocmd VimEnter * lua _G.chat()'"
-alias commit="nvim +CopilotChatCommitStaged"
+alias commit="nvim +CopilotChatCommit"
 
 # PROMPT
 eval "$(starship init zsh)"
