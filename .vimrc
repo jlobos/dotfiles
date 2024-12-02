@@ -83,7 +83,7 @@ Plug 'vim-test/vim-test'
 " Copilot
 Plug 'zbirenbaum/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' }
   nnoremap <leader>c :CopilotChatToggle<cr>
 
 " Explore
