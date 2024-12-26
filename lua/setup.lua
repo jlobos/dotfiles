@@ -26,6 +26,20 @@ nvim_tree.setup {
 -- LSP servers
 --
 
+-- for Deno
+lspconfig.denols.setup {
+  on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
+-- for JavaScript and TypeScript
+lspconfig.ts_ls.setup {
+  on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern("package.json"),
+  single_file_support = false
+}
+
+-- for Arduino
 lspconfig.arduino_language_server.setup {
   cmd = {
     "arduino-language-server",
@@ -33,12 +47,14 @@ lspconfig.arduino_language_server.setup {
   }
 }
 
+-- for Python
 lspconfig.pyright.setup {}
-lspconfig.ts_ls.setup {}
+
 -- for Swift
 lspconfig.sourcekit.setup {
   filetypes = { 'swift' },
 }
+
 -- for Lua
 lspconfig.lua_ls.setup {
   settings = {
