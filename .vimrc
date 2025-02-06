@@ -55,6 +55,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' }
 " Ejecuta Prettier al guardar
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
+" Ctrl + , + ,
 Plug 'mattn/emmet-vim'
   let g:user_emmet_leader_key=','
   let g:user_emmet_install_global = 0
