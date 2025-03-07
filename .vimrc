@@ -52,8 +52,6 @@ Plug 'junegunn/fzf.vim'
 
 " wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' }
-" Ejecuta Prettier al guardar
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 " Ctrl + , + ,
 Plug 'mattn/emmet-vim'
@@ -67,6 +65,7 @@ Plug 'jiangmiao/auto-pairs'
 " Comment stuff out
 Plug 'tpope/vim-commentary'
 autocmd FileType swift,arduino setlocal commentstring=//\ %s
+autocmd FileType applescript,sql setlocal commentstring=--\ %s
 
 " Mappings to easily delete, change and add such surroundings in pairs
 Plug 'tpope/vim-surround'
@@ -151,6 +150,9 @@ autocmd BufWritePre *.swift :call SwiftFormat()
 " Rust
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
+
+" AppleScript
+Plug 'vim-scripts/applescript.vim'
 
 call plug#end()
 
