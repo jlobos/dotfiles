@@ -5,14 +5,23 @@
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
 export LANG='en_US.UTF-8'
+export HISTCONTROL=ignoreboth
+
 # bun
 export BUN_PATH="$HOME/.bun/bin"
 # go
-export GO_PATH="$HOME/go"
+export GO_PATH="$HOME/go/bind"
 # fzf
 export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
 
-export PATH="$PATH:$BUN_PATH:$GO_PATH/bin"
+# ruby
+export RUBY_PATH="/usr/local/opt/ruby/bin"
+export GEM_HOME="$HOME/.gem/bin"
+
+# android
+export PLATFORM_TOOLS=~/Library/Android/sdk/platform-tools
+
+export PATH="$PATH:$BUN_PATH:$GO_PATH:$RUBY_PATH:$GEM_HOME:$PLATFORM_TOOLS"
 
 # node
 export NODE_OPTIONS='--disable-warning=ExperimentalWarning'
@@ -86,4 +95,8 @@ function_update () {
 
   # Update plugins of tmux
   ~/.tmux/plugins/tpm/bin/update_plugins all
+}
+
+function_free_space () {
+  diskutil info / | awk '/Free Space/ {print $4 $5}'
 }
