@@ -67,6 +67,14 @@ lspconfig.lua_ls.setup {
   },
 }
 
+-- for css
+-- Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.cssls.setup {
+  capabilities = capabilities,
+}
+
 -- K muestra informacion
 -- gd salta a definición
 -- gD salta a declaración
@@ -89,10 +97,10 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 )
 
 -- Copilot settings
-copilot.setup {
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-}
+-- copilot.setup {
+--   suggestion = { enabled = false },
+--   panel = { enabled = false },
+-- }
 copilot_chat.setup {
   show_help = false,
   auto_follow_cursor = false,
