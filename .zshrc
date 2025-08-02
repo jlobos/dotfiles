@@ -59,6 +59,7 @@ alias copy='pbcopy'
 # ia powered
 alias copilot="nvim --cmd 'autocmd VimEnter * lua _G.chat()'"
 alias commit="nvim +CopilotChatCommit"
+alias ssh='TERM=xterm-256color ssh'
 
 # PROMPT
 eval "$(starship init zsh)"
